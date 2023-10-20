@@ -30,12 +30,36 @@
                             الوسوم
                         </div>
                         <div class="col-12 pt-3">
-                            <select class="form-control select2-select" name="tag_id[]"  multiple size="1" style="height:30px;opacity: 0;">
+                            <select class="form-control select2-select" required name="tag_id[]"  multiple size="1" style="height:30px;opacity: 0;">
                                 @foreach($tags as $tag)
                                 <option value="{{$tag->id}}">{{$tag->tag_name}}</option>
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="col-12">
+                            اسم الكاتب
+                        </div>
+                        <div class="col-12 pt-3">
+                            <input type="text" name="writer_name" required maxlength="190" class="form-control" value="{{old('writer_name')}}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="col-12">
+                            تخصص الكاتب
+                        </div>
+                        <div class="col-12 pt-3">
+                            <input type="text" name="writer_specialty" required maxlength="190" class="form-control" value="{{old('writer_specialty')}}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="col-12">
+                            تاريخ الاضافة
+                        </div>
+                        <div class="col-12 pt-3">
+                            <input type="datetime-local" required name="date_added" value="{{old('date_added')}}" class="form-control">
+                        </div> 
                     </div>
                     <div class="col-12">
                     </div>
@@ -67,7 +91,7 @@
                     </div>
                     <div class="col-12  p-2">
                         <div class="col-12">
-                            الوصف
+                            المحتوى
                         </div>
                         <div class="col-12 pt-3">
                             <textarea name="description" class="editor with-file-explorer">{{old('description')}}</textarea>
@@ -101,3 +125,5 @@
     </div>
 </div>
 @endsection
+
+

@@ -41,7 +41,11 @@ class Article extends Model implements HasMedia
         return $this->belongsToMany(\App\Models\Tag::class,'article_tags');
 
     }
-
+    public function getDateAddedAttribute($value)
+    {
+        if($value==null)return;
+        return \Carbon::parse($value)->format('Y-m-d\TH:i');
+    }
     public function registerMediaConversions(Media $media = null): void
     {
         $this

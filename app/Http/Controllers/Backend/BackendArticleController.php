@@ -61,7 +61,12 @@ class BackendArticleController extends Controller
             'is_featured'=>"required|in:0,1",
             'title'=>"required|max:190",
             'description'=>"nullable|max:100000",
+            'writer_specialty'=>"nullable|max:10000",
+            'writer_name'=>"nullable|max:10000",
             'meta_description'=>"nullable|max:10000",
+            'writer_specialty'=>"required",
+            'writer_name'=>"required",
+            'date_added'=>"required",
         ]);
         $article = Article::create([
             'user_id'=>auth()->user()->id,
@@ -70,6 +75,9 @@ class BackendArticleController extends Controller
             "title"=>$request->title,
             "description"=>$request->description,
             "meta_description"=>$request->meta_description,
+            "writer_specialty"=>$request->writer_specialty,
+            "writer_name"=>$request->writer_name,
+            "date_added"=>$request->date_added,
         ]);
         $article->categories()->sync($request->category_id);
         $article->tags()->sync($request->tag_id);
@@ -127,6 +135,9 @@ class BackendArticleController extends Controller
             'title'=>"required|max:190",
             'description'=>"nullable|max:100000",
             'meta_description'=>"nullable|max:10000",
+            'writer_specialty'=>"required",
+            'writer_name'=>"required",
+            'date_added'=>"required",
         ]);
         $article->update([
             'user_id'=>auth()->user()->id,
@@ -135,6 +146,9 @@ class BackendArticleController extends Controller
             "title"=>$request->title,
             "description"=>$request->description,
             "meta_description"=>$request->meta_description,
+            "writer_specialty"=>$request->writer_specialty,
+            "writer_name"=>$request->writer_name,
+            "date_added"=>$request->date_added,
         ]);
         $article->categories()->sync($request->category_id);
         $article->tags()->sync($request->tag_id);

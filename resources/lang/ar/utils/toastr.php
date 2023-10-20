@@ -14,7 +14,8 @@ $messages = [
 
 // Entity Name => Display Text 
 $entities = [
-    'article' => 'المقال',
+    'article' => 'المدونة',
+    'project_gallery' => 'معرض الأعمال',
     'category' => 'القسم',
     'contact' => 'طلب التواصل',
 ];

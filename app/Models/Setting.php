@@ -17,7 +17,6 @@ class Setting extends Model implements HasMedia
     
     protected $guarded = ['id','created_at','updated_at'];
 
-
     public function registerMediaConversions(Media $media = null): void
     {
         $this

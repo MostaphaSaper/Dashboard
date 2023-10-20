@@ -6,7 +6,7 @@
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
-					<span class="fas fa-comments"></span> عرض الكل
+					 التعليقات
 				</div>
 				<div class="col-12 col-lg-4 p-0">
 				</div>
@@ -60,9 +60,15 @@
 						@if(auth()->user()->hasRole('superadmin'))
 						<td><a href="{{route('admin.traffics.logs',['ip'=>$comment->ip])}}">{{$comment->ip}}</a></td>
 						@endif
-						<td>
-							<a href="{{route('article.show',['article'=>$comment->article,'user'=>$comment->article->user])}}" >{{mb_strimwidth(($comment->article->title), 0, 80, "...")}}</a>
-						</td>
+						@if ($comment->article)
+							<td>
+								<a href="{{route('article.show',['article'=>$comment->article,'user'=>$comment->article->user])}}" >{{mb_strimwidth(($comment->article->title), 0, 80, "...")}}</a>
+							</td>
+						@else
+						<td></td>
+						@endif
+						
+						
 						<td style="width: 170px;">
 
 					 

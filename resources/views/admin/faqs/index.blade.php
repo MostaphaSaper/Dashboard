@@ -6,7 +6,7 @@
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
-					<span class="fas fa-faqs"></span> عرض الكل
+					<span class="fas fa-faqs"></span> الأسئلة الشائعة 
 				</div>
 				<div class="col-12 col-lg-4 p-0">
 				</div>

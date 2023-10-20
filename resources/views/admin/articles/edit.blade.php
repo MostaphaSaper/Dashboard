@@ -9,7 +9,7 @@
             <div class="col-12 col-lg-8 p-0 main-box">
                 <div class="col-12 px-0">
                     <div class="col-12 px-3 py-3">
-                        <span class="fas fa-info-circle"></span> تعديل مقال
+                        <span class="fas fa-info-circle"></span> تعديل مدونة
                     </div>
                     <div class="col-12 divider" style="min-height: 2px;"></div>
                 </div>
@@ -31,12 +31,36 @@
                             الوسوم
                         </div>
                         <div class="col-12 pt-3">
-                            <select class="form-control select2-select" name="tag_id[]" multiple size="1" style="height:30px;opacity: 0;">
+                            <select class="form-control select2-select" required name="tag_id[]" multiple size="1" style="height:30px;opacity: 0;">
                                 @foreach($tags as $tag)
                                 <option value="{{$tag->id}}" @if(in_array($tag->id,$article->tags->pluck('id')->toArray())) selected @endif>{{$tag->tag_name}}</option>
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="col-12">
+                            اسم الكاتب
+                        </div>
+                        <div class="col-12 pt-3">
+                            <input type="text" name="writer_name" required maxlength="190" class="form-control" value="{{$article->writer_name}}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="col-12">
+                            تخصص الكاتب
+                        </div>
+                        <div class="col-12 pt-3">
+                            <input type="text" name="writer_specialty" required maxlength="190" class="form-control" value="{{$article->writer_specialty}}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 p-2">
+                        <div class="col-12">
+                            تاريخ الاضافة
+                        </div>
+                        <div class="col-12 pt-3">
+                            <input type="datetime-local" name="date_added" value="{{$article->date_added}}" class="form-control">
+                        </div> 
                     </div>
                     <div class="col-12"></div>
                     <div class="col-12 col-lg-6 p-2">
@@ -68,7 +92,7 @@
                     </div>
                     <div class="col-12  p-2">
                         <div class="col-12">
-                            الوصف
+                            المحتوى
                         </div>
                         <div class="col-12 pt-3">
                             <textarea name="description" class="editor with-file-explorer">{{$article->description}}</textarea>

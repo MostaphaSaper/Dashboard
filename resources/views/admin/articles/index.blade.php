@@ -6,7 +6,7 @@
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
-					<span class="fas fa-articles"></span> المقالات
+					<span class="fas fa-articles"></span> المدونة
 				</div>
 				<div class="col-12 col-lg-4 p-0">
 				</div>
@@ -37,11 +37,17 @@
 					<tr>
 						<th>#</th>
 						<th>المستخدم</th>
-						<th>الشعار</th>
-						<th>العنوان</th>
+						<th>اسم الكاتب</th>
+						<th>تخصص الكاتب</th>
+						<th> القسم </th>
+						<th> الوسوم </th>
+						<th>تاريخ الاضافة</th>
+						<th>الرابط </th>
+						<th>العنوان </th>
+						<th>الصورة الرئيسية</th>
 						<th>مميز</th>
 						<th>زيارات</th>
-						<th>تحكم</th>
+						<th >تحكم</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -49,11 +55,25 @@
 					<tr>
 						<td>{{$article->id}}</td>
 						<td>{{$article->user->name}}</td>
-						{{-- <td>
-							<a href="{{route('admin.categories.index',['id'=>$article->category_id])}}" style="color:#2381c6">{{$article->category->title_ar}}</a>
-						</td> --}}
-						<td><img src="{{$article->main_image()}}" style="width:40px"></td>
+						<td>{{$article->writer_name}}</td>
+						<td>{{$article->writer_specialty}}</td>
+						<td>
+							@foreach ($article->categories as $category)
+								{{$category->title}}
+							@endforeach
+						</td>
+						<td>
+							@foreach ($article->tags as $tag)
+								{{$tag->tag_name}}
+							@endforeach
+						</td>
+						<td>{{$article->date_added}}</td>
+
+						<td>{{$article->slug}}</td>
+						
 						<td>{{$article->title}}</td>
+	
+						<td><img src="{{$article->main_image()}}" style="width:40px"></td>
 
 						<td>
 							@if($article->is_featured==1)

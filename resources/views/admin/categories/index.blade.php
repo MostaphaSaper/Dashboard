@@ -37,9 +37,10 @@
 					<tr>
 						<th>#</th>
 						
-						<th>الشعار</th>
+						<th>الرابط</th>
 						<th>العنوان</th>
 						<th>المقالات</th>
+						<th>الصورة الرئيسية</th>
 						<th>تحكم</th>
 					</tr>
 				</thead>
@@ -47,10 +48,10 @@
 					@foreach($categories as $category)
 					<tr>
 						<td>{{$category->id}}</td>
-
-						<td><img src="{{$category->image()}}" style="width:40px"></td>
+						<td>{{$category->slug}}</td>
 						<td>{{$category->title}}</td>
-					 	<td><a href="{{route('admin.articles.index',['category_id'=>$category->id])}}">{{$category->articles_count}}</a></td>
+						<td><a href="{{route('admin.articles.index',['category_id'=>$category->id])}}">{{$category->articles_count}}</a></td>
+						<td><img src="{{$category->image()}}" style="width:40px"></td>
 
 						<td style="width: 180px;">
 							@can('categories-update')

@@ -36,7 +36,7 @@
 
 			<div class="col-12 p-2">
 				<div class="col-12">
-					الشعار
+					الصوؤة الرئيسية
 				</div>
 				<div class="col-12 pt-3">
 					<input type="file" name="image"    class="form-control" accept="image/*">

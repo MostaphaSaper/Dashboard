@@ -94,7 +94,7 @@ class BackendTagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTagRequest $request, Tag $tag)
+    public function update(Request $request, Tag $tag)
     {
         $request->validate([
             'tag_name'=>"required|unique:tags,tag_name,".$tag->id,

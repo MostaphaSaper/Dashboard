@@ -6,7 +6,7 @@
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
-					<span class="fas fa-tags"></span> عرض الكل
+					الوسوم 
 				</div>
 				<div class="col-12 col-lg-4 p-2">
 				</div>
@@ -36,8 +36,10 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>الاسم</th>
-						<th>الرمز</th>
+						<th>اسم المهارة</th>
+						<th> الاسم باللغة العربية </th>
+						<th> الاسم باللغة الانجليزية</th>
+						<th> رمز المهارة</th>
 						<th>تحكم</th>
 					</tr>
 				</thead>
@@ -46,6 +48,8 @@
 					<tr >
 						<td>{{$tag->id}}</td>
 						<td>{{$tag->tag_name}}</td>
+						<td>{{$tag->arabic_name}}</td>
+						<td>{{$tag->english_name}}</td>
 						<td>{{$tag->slug}}</td>
 					 
 						<td style="width: 270px;">

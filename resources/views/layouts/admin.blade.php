@@ -206,11 +206,118 @@
                                 <span class="fal fa-home font-2"> </span> 
                             </div>
                             <div style="width: calc(100% - 50px)" class="px-2 item-container-title">
-                                الرئيسية
+                                لوحة التحكم#
                             </div> 
                         </div>
                     </a>
 
+                    @can('settings-update')
+                    <a href="{{route('admin.settings.index')}}" class="col-12 px-0" >
+                        <div class="col-12 item-container px-0 d-flex " >
+                            <div style="width: 50px" class="px-3 text-center">
+                                <span class="fal fa-wrench font-2"> </span> 
+                            </div>
+                            <div style="width: calc(100% - 50px)" class="px-2 item-container-title">
+                               الإعدادات#
+                            </div> 
+                        </div>
+                    </a> 
+                    @endcan
+
+                    <div class="col-12 px-0" style="cursor: pointer;">
+                        <div class="col-12 item px-0 d-flex row " >
+                            <div class="col-12 d-flex px-0 item-container">
+                                <div style="width: 50px" class="px-3 text-center">
+                                    <span class="fal fa-newspaper font-2"> </span> 
+                                </div>
+                                <div style="width: calc(100% - 50px)" class="px-2 item-container-title has-sub-menu">
+                                    المحتوى#
+                                </div> 
+                            </div>
+                            <div class="col-12 px-0" >
+                                <ul class="sub-item font-1" style="list-style:none;">
+                                    @can('tags-read')
+                                    <li><a href="{{route('admin.tags.index')}}" style="font-size: 16px;"><span class="fal fa-tags px-2" style="width: 28px;font-size: 15px;"></span> الوسوم#
+                                    </a></li>
+                                    @endcan
+                                    
+                                    @can('articles-read')
+                                    <li><a href="{{route('admin.articles.index')}}" style="font-size: 16px;"><span class="fal fa-book px-2" style="width: 28px;font-size: 15px;"></span> المدونة#</a></li>
+                                    @endcan
+
+                                    <li><a href="{{route('admin.consulting-requests.index')}}" style="font-size: 16px;"><span class="fal fa-book px-2" style="width: 28px;font-size: 15px;"></span> طلبات الاستشارات#</a></li>
+
+                                    <li><a href="{{route('admin.project-gallery.index')}}" style="font-size: 16px;"><span class="fal fa-book px-2" style="width: 28px;font-size: 15px;"></span> معرض الأعمال#</a></li>
+
+                                    <li><a href="{{ route('admin.mailing-list.index') }}" style="font-size: 16px;"><span class="fal fa-book px-2" style="width: 28px;font-size: 15px;"></span> القائمة البريدية#</a></li>
+
+                                    @can('categories-read')
+                                    <li><a href="{{route('admin.categories.index')}}" style="font-size: 16px;"><span class="fal fa-tag px-2" style="width: 28px;font-size: 15px;"></span> الأقسام</a></li>
+                                    @endcan
+                                    
+
+                                    @can('comments-read')
+                                    <li><a href="{{route('admin.article-comments.index')}}" style="font-size: 16px;"><span class="fal fa-comments px-2" style="width: 28px;font-size: 15px;"></span> التعليقات
+                                        @php
+                                        $article_comments = \App\Models\ArticleComment::where('reviewed',0)->count();
+                                        @endphp
+                                        @if($article_comments)
+                                        <span style="background: #d34339;border-radius: 2px;color:var(--background-1);display: inline-block;font-size: 11px;text-align: center;padding: 1px 5px;margin: 0px 8px">{{$article_comments}}</span>
+                                        
+                                        @endif
+
+                                    </a></li>
+                                    @endcan
+
+                                    @can('announcements-read')
+                                    <li><a href="{{route('admin.announcements.index')}}" style="font-size: 16px;"><span class="fal fa-bullhorn px-2" style="width: 28px;font-size: 15px;"></span> الإعلانات
+                                    </a></li>
+                                    @endcan
+                                    @can('pages-read')
+                                    <li><a href="{{route('admin.pages.index')}}" style="font-size: 16px;"><span class="fal fa-file-invoice px-2" style="width: 28px;font-size: 15px;"></span> الصفحات
+                                    </a></li>
+                                    @endcan
+
+                                    @can('menus-read')
+                                    <li><a href="{{route('admin.menus.index')}}" style="font-size: 16px;"><span class="fal fa-list px-2" style="width: 28px;font-size: 15px;"></span> القوائم
+                                    </a></li>
+                                    @endcan
+                                    @can('faqs-read')
+                                    <li><a href="{{route('admin.faqs.index')}}" style="font-size: 16px;"><span class="fal fa-question px-2" style="width: 28px;font-size: 15px;"></span> الأسئلة الشائعة
+                                    </a></li>
+                                    @endcan
+                                    @can('redirections-read')
+                                    <li><a href="{{route('admin.redirections.index')}}" style="font-size: 16px;"><span class="fal fa-directions px-2" style="width: 28px;font-size: 15px;"></span> التحويلات
+                                    </a></li>
+                                    @endcan
+                                    
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    @can('contacts-read')
+                    <a href="{{route('admin.contacts.index')}}" class="col-12 px-0" >
+                        <div class="col-12 item-container px-0 d-flex " >
+                            <div style="width: 50px" class="px-3 text-center">
+                                <span class="fal fa-phone font-2"> </span> 
+                            </div>
+                            <div style="width: calc(100% - 50px)" class="px-2 item-container-title">
+                                 اتصل بنا#
+                            @php
+                            $contacts_count = \App\Models\Contact::where('status','PENDING')->count();
+                            @endphp
+                            @if($contacts_count)
+                            <span style="background: #d34339;border-radius: 2px;color:var(--background-1);display: inline-block;font-size: 11px;text-align: center;padding: 1px 5px;margin: 0px 8px">{{$contacts_count}}</span>
+                            
+                            @endif
+                            </div> 
+                        </div>
+                    </a>
+                    @endcan
 
                     @can('roles-read')
                     <a href="{{route('admin.roles.index')}}" class="col-12 px-0" >
@@ -256,116 +363,7 @@
                             @endcan
                         @endif
                     @endforeach
-
-
-
-
-
-                    <div class="col-12 px-0" style="cursor: pointer;">
-                        <div class="col-12 item px-0 d-flex row " >
-                            <div class="col-12 d-flex px-0 item-container">
-                                <div style="width: 50px" class="px-3 text-center">
-                                    <span class="fal fa-newspaper font-2"> </span> 
-                                </div>
-                                <div style="width: calc(100% - 50px)" class="px-2 item-container-title has-sub-menu">
-                                    المحتوى
-                                </div> 
-                            </div>
-                            <div class="col-12 px-0" >
-                                <ul class="sub-item font-1" style="list-style:none;">
-                                    @can('categories-read')
-                                    <li><a href="{{route('admin.categories.index')}}" style="font-size: 16px;"><span class="fal fa-tag px-2" style="width: 28px;font-size: 15px;"></span> الأقسام</a></li>
-                                    @endcan
-                                    @can('articles-read')
-                                    <li><a href="{{route('admin.articles.index')}}" style="font-size: 16px;"><span class="fal fa-book px-2" style="width: 28px;font-size: 15px;"></span> المقالات</a></li>
-                                    @endcan
-
-                                    @can('comments-read')
-                                    <li><a href="{{route('admin.article-comments.index')}}" style="font-size: 16px;"><span class="fal fa-comments px-2" style="width: 28px;font-size: 15px;"></span> التعليقات
-                                        @php
-                                        $article_comments = \App\Models\ArticleComment::where('reviewed',0)->count();
-                                        @endphp
-                                        @if($article_comments)
-                                        <span style="background: #d34339;border-radius: 2px;color:var(--background-1);display: inline-block;font-size: 11px;text-align: center;padding: 1px 5px;margin: 0px 8px">{{$article_comments}}</span>
-                                        
-                                        @endif
-
-                                    </a></li>
-                                    @endcan
-
-                                    @can('announcements-read')
-                                    <li><a href="{{route('admin.announcements.index')}}" style="font-size: 16px;"><span class="fal fa-bullhorn px-2" style="width: 28px;font-size: 15px;"></span> الإعلانات
-                                    </a></li>
-                                    @endcan
-                                    @can('pages-read')
-                                    <li><a href="{{route('admin.pages.index')}}" style="font-size: 16px;"><span class="fal fa-file-invoice px-2" style="width: 28px;font-size: 15px;"></span> الصفحات
-                                    </a></li>
-                                    @endcan
-
-                                    @can('menus-read')
-                                    <li><a href="{{route('admin.menus.index')}}" style="font-size: 16px;"><span class="fal fa-list px-2" style="width: 28px;font-size: 15px;"></span> القوائم
-                                    </a></li>
-                                    @endcan
-                                    @can('faqs-read')
-                                    <li><a href="{{route('admin.faqs.index')}}" style="font-size: 16px;"><span class="fal fa-question px-2" style="width: 28px;font-size: 15px;"></span> الأسئلة الشائعة
-                                    </a></li>
-                                    @endcan
-                                    @can('redirections-read')
-                                    <li><a href="{{route('admin.redirections.index')}}" style="font-size: 16px;"><span class="fal fa-directions px-2" style="width: 28px;font-size: 15px;"></span> التحويلات
-                                    </a></li>
-                                    @endcan
-                                    @can('tags-read')
-                                    <li><a href="{{route('admin.tags.index')}}" style="font-size: 16px;"><span class="fal fa-tags px-2" style="width: 28px;font-size: 15px;"></span> الوسوم
-                                    </a></li>
-                                    @endcan
-
-
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    
-                    @can('contacts-read')
-                    <a href="{{route('admin.contacts.index')}}" class="col-12 px-0" >
-                        <div class="col-12 item-container px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-phone font-2"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2 item-container-title">
-                                طلب التواصل 
-                            @php
-                            $contacts_count = \App\Models\Contact::where('status','PENDING')->count();
-                            @endphp
-                            @if($contacts_count)
-                            <span style="background: #d34339;border-radius: 2px;color:var(--background-1);display: inline-block;font-size: 11px;text-align: center;padding: 1px 5px;margin: 0px 8px">{{$contacts_count}}</span>
-                            
-                            @endif
-                            </div> 
-                        </div>
-                    </a>
-                    @endcan
                    
-                    
-                    
-                    @can('settings-update')
-                    <a href="{{route('admin.settings.index')}}" class="col-12 px-0" >
-                        <div class="col-12 item-container px-0 d-flex " >
-                            <div style="width: 50px" class="px-3 text-center">
-                                <span class="fal fa-wrench font-2"> </span> 
-                            </div>
-                            <div style="width: calc(100% - 50px)" class="px-2 item-container-title">
-                               الإعدادات
-                            </div> 
-                        </div>
-                    </a> 
-                    @endcan
-
- 
-
-
                     @can('plugins-read')
                     <div class="col-12 px-0" style="cursor: pointer;">
                         <div class="col-12 item px-0 d-flex row " >

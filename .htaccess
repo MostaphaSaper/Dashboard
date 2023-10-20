@@ -2,6 +2,7 @@
 Options +FollowSymLinks
 RewriteEngine On
 
+
 # Disable index view
 Options -Indexes
 
