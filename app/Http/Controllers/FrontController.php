@@ -13,12 +13,12 @@ use App\Models\Category;
 
 class FrontController extends Controller
 {
-    
+
     public function index(Request $request)
     {
-        return view('front.index');
+        return view('website.home');
     }
-    
+
     public function comment_post(Request $request)
     {
         if(auth()->check()){
@@ -72,7 +72,7 @@ class FrontController extends Controller
         $articles = Article::where(function($q)use($request,$category){
             if($request->user_id!=null)
                 $q->where('user_id',$request->user_id);
-            
+
             $q->whereHas('categories',function($q)use($request,$category){
                 $q->where('category_id',$category->id);
             });
@@ -100,13 +100,13 @@ class FrontController extends Controller
     }
     public function page(Request $request,Page $page)
     {
-    
+
         $customView = 'front.pages.custom-pages.' . $page->slug;
 
         if(view()->exists($customView)) {
             // If the file exists, return custom page
             return view($customView,compact('page'));
-        }         
+        }
 
         return view('front.pages.page',compact('page'));
     }
