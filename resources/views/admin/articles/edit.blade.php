@@ -59,7 +59,7 @@
                             تاريخ الاضافة
                         </div>
                         <div class="col-12 pt-3">
-                            <input type="datetime-local" name="date_added" value="{{$article->date_added}}" class="form-control">
+                            <input type="datetime-local" required name="date_added" value="{{$article->date_added}}" class="form-control">
                         </div> 
                     </div>
                     <div class="col-12"></div>
