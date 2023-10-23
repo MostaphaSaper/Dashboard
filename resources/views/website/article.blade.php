@@ -1,50 +1,193 @@
 @extends('layouts.website')
 @section('content')
-<section id="header" class="blog-bg">
-    <div class="headerContent">
-        <h1>المدوّنة</h1>
-    </div>
+
+<section id="header" class="info-gallery">
+
 </section>
 
-<section id="our-gallery">
-    <div class="container">
-        <div class="filter-text" data-aos="fade-down" data-aos-duration="1000">
-            @foreach ($tags as $tag)
-            {{-- <span class="active">تسويق</span> --}}
-                <span>{{ $tag->tag_name }}</span>
-            @endforeach
-
-        </div>
-        <div class="search" data-aos="fade-down" data-aos-duration="1000">
-            <input type="text" placeholder="البحث" class="form-control">
-            <button>ابحث</button>
-        </div>
-        <div class="main-block">
-            @foreach ($articles as $article)
-                <div class="block" >
-                    <a href="blog_info.html" data-aos="fade-up-left" data-aos-duration="1000">
-                        <div class="top d-flex align-items-end one" style="background: {{ $article->main_image }} no-repeat top center/cover;">
-                            <button>تحليل</button>
-                            <button>تسويق</button>
-                        </div>
-                        <div class="bottom">
-                            <h4>{{ $article->title }}</h4>
-                            <p>{!!$article->description!!}</p>
-                            <span>اقرأ المزيد</span>
-                        </div>
-                    </a>
+<section id="info-gallery">
+    <div class="container info-gallery-container">
+        <div class="row gy-5 justify-content-between first-row">
+            <h2 class="text-center">{{ $article->title }}</h2>
+            <div class="first-row-blog">
+                <div class="first-row-blog-blog mt-md-0">
+                    <span>اسم الكاتب: {{ $article->writer_name }}</span>
                 </div>
-            @endforeach
+                <div class="first-row-blog-blog two">
+                    <span>{{ \Carbon\Carbon::parse($article->date_added)->format('d/m/y') }}</span>
+                </div>
+                <div class="first-row-blog-blog">
+                    <span>{{ $article->writer_specialty }}</span>
+                </div>
+            </div>
         </div>
-        <div class="text-center"><button class="read-more">اقرأ المزيد</button></div>
-        <div class="search-2">
-            <h5 data-aos="fade-down" data-aos-duration="1000">انـضـم لـنـشـرتـنـا الـبـريـديـة</h5>
-            <p data-aos="fade-down" data-aos-duration="1000">مقالات غنية بالمعلومات المفيدة</p>
-            <div data-aos="fade-down" data-aos-duration="1000">
-                <input type="text" placeholder="البريد الالكتروني" class="form-control">
-                <a href="https://slsalah.space/signup">
-                    <button>سجل الآن</button>
-                </a>
+        <div class="row second-row gy-4">
+            <img src="{{ $article->main_image }}" class="col-12 img-fluid info-gallery-img" alt="info-gallery-img"
+                data-aos="fade-down" data-aos-duration="1000">
+            <p class="col-12 mb-0" data-aos="fade-down" data-aos-duration="1000">
+                كيفية عمل دراسة الجدوى الاقتصادية تعد من أهم الخطوات التي يجب إتخاذها، وذلك عند القيام بأي مشروع.
+                <br />
+                لأنها هى التي تقدم لصاحب المشروع كافة المعلومات التي يحتاج لها، لكي تجيب عن تساؤلات كثيرة من شأنها
+                أن يعرف هل هذا
+                المشروع سوف ينجح أم لا. <br>
+                ونظراً لأن دراسات الجدوى مكلفة الثمن وخاصة ً لمن يبدأ في مشروع جديد صغير، وحرصاً من موقع مقال على
+                تقديم كل ما هو جديد
+                ومفيد.
+                <br><br>
+                كيفية عمل دراسة الجدوى لأي مشروع بالخطوات <br>
+                تعتبر دراسة الجدوى هى الأساس الذى يضمن لأي مشروع إستمراره. <br>
+                لأنها توفر كافة المعلومات عن ما يحتاج إليه من تسويق وعمليات فنية ومالية، ويتم ذلك من خلال عدة نقاط
+                هي كالتالي. <br>
+                أولاً الدراسة الخاصة بالسوق
+            </p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>تتم الدراسة الخاصة بالسوق من خلال عدة نقاط أساسية، وهي كالأتي.</li>
+                <li>حيث يتم هذا من خلال عمل دراسة كاملة عن العملاء المستهدفين.</li>
+                <li>كذلك مدى استيعاب السوق للكميات المطلوبة سواء للخدمة أو المنتج.</li>
+                <li>وما هى التوقعات المستقبلية لزيادة أو نقصان الكميات على طلب السلعة أو الخدمة، والتي يقدمها
+                    المشروع.</li>
+                <li>عمل مقارنة دقيقة في الأسواق بين السلعة او الخدمة المعروضة، وبين ما يتم استهلاكه بالفعل من
+                    العملاء.</li>
+                <li>بالإضافة إلى فهم كافة الأساليب التي يتبعها المنافسين بين بعضهم البعض.</li>
+                <li>معرفة كل ما يتعلق بالخدمة أو المنتج من جودة وأسلوب في التوزيع.</li>
+                <li>كذلك التعرف على كيفية التسويق له وما هى الأسعار التي تم وضعها من <br
+                        class="d-none-d-lg-block">المنافسين ؟</li>
+            </ul>
+            <p data-aos="fade-down" data-aos-duration="1000">قد يهمك : كيفية حساب الربح والخسارة لمشروع صغير</p>
+            <img src="../imgs/info-blog-img.png" class="img-fluid col-12 info-blog-img-2" alt="img"
+                data-aos="fade-down" data-aos-duration="1000">
+            <p class="mt-5 mb-3" data-aos="fade-down" data-aos-duration="1000">ثانياً – دراسة النواحي الفنية للمشروع
+            </p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>وتتم باتباع خطوات معينة وهي كما يأتي.</li>
+                <li>لابد من التحديد الدقيق لأصول المشروع الثابتة.</li>
+                <li>وكذلك معرفة ما يناسبه من موقع حتى يتم إنشائه، وما سوف يلزم له من معدات أو مواد لبنائه.</li>
+                <li>عمل دراسة دقيقة لكل ما سوف يحتاج إليه المشروع من مواد أوليه.</li>
+                <li>وكذلك العمال والمرافق العامة التي يجب أن تتوافر به.</li>
+                <li>دراسة العملية الإنتاجية للمشروع، من حيث المراحل الخاصة بالانتاج وصولاً الى عملية تخزين البضائع
+                    وما هى الدورة الخاصة
+                    بالإنتاج.</li>
+                <li>وهل هناك كم معين لا بد من إنتاجه ؟ وما هى هذه الكمية ؟</li>
+            </ul>
+            <p class="mb-0" data-aos="fade-down" data-aos-duration="1000">
+                ثالثاً – دراسة مالية خاصة بالمشروع <br>
+                هذه الدراسة المالية تتم من خلال عدد من النقاط الأساسية وهى. <br>
+                النقطة الأولى <br>
+                هي التي يتم فيها دراسة كل التكاليف التي سوف يحتاج إليها المشروع، و نجدها تنقسم إلى ما يلي. <br>
+                تكاليف التأسيس <br>
+            </p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>وهى مجموعة التكاليف التي سوف يحتاج إليها المشروع في بداياته.</li>
+                <li>وخاصة فيما يرتبط بالرسوم المدفوعة فى استخراج الأوراق الرسمية والتراخيص.</li>
+                <li>وكذلك الإستشارات وهي مصروفات لن يتم إسترجاعها بعد ذلك.</li>
+            </ul>
+            <p data-aos="fade-down" data-aos-duration="1000" class="my-5">تكاليف خاصة برأس المال</p>
+            <p data-aos="fade-down" data-aos-duration="1000" class="m-0">
+                وتشمل المكان الذي سوف يقام عليها المشروع والمعدات التي سوف تقوم بالإنتاج. <br>
+                كما إنها هي مصروفات يمكن استرجاعها إذا تم بيعها مرة أخرى. <br>
+                تكاليف تشغيلية <br>
+                وهي الخاصة بالمكان التي يتم فيها إنتاج المشروع. <br>
+                كما يتم حساباتها خلال عام واحد من دورة المشروعات الإنتاجية. <br>
+                تكاليف ثابتة <br>
+            </p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>وهي المتعلقة بما سوف يتم إنفاقه لقيام المشروع.</li>
+                <li>كما إنها هى لا تتغير حتى وإن كان المشروع قد زاد في الإنتاج.</li>
+                <li>ومثال على ذلك إيجار المكان وكذلك الصيانة الدورية، بالإضافة إلى رواتب العمال.</li>
+            </ul>
+            <p data-aos="fade-down" data-aos-duration="1000" class="my-5">تكاليف متغيرة</p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>وهى مرتبطة بالنسبة التي يقوم بها المشروع بالإنتاج.</li>
+                <li>تلك التي تعد متغيرة حسب الحجم الذي يتم إنتاجه من السلعة.</li>
+                <li>كذلك تشمل المواد الخام المستخدمة في الإنتاج وأجور العمال والفواتير، والتي يتم دفعها الخاصة
+                    بالمرافق العامة.</li>
+            </ul>
+            <p data-aos="fade-down" data-aos-duration="1000" class="mb-0">اقرأ أيضًا : كيفية عمل دراسة جدوي ناجحة
+                لمشروع في 5 خطوات فقط</p>
+            <p data-aos="fade-down" data-aos-duration="1000" class="my-5">النقطة الثانية</p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>يتم في هذه المرحلة عمل عدة حسابات، مثل الإيراد الشهري والكمية التي تم بيعها.</li>
+                <li>وكذلك التكلفة الشهرية للتشغيل، وأيضاً الربح الذي تم تحقيقه في شهر كامل.</li>
+                <li>وآخر ما سوف نقوم بتقديمه في هذا المقال الشامل.</li>
+                <li>وهو أن نؤكد على أن كل ما قمنا بتقديمه ليس بالضرورة يمكن أن يتم تطبيقه لكل مشروع.</li>
+                <li>كما إن هناك مشاريع لا تتطلب كل هذه الخطوات وفقكم الله جميعاً.</li>
+            </ul>
+            <p class="mb-0" data-aos="fade-down" data-aos-duration="1000">
+                معلومات عن دراسة الجدوى <br>
+                أنواع دراسات الجدوى الاقتصادية
+            </p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>حظي موضوع دراسات الجدوى الاقتصادية بالاهتمام لدورها الكبير في تحقيق الاستخدام والتوزيع الأمثل
+                    للموارد الاقتصادية
+                    المتاحة.</li>
+                <li>كما إن هناك علاقة وثيقة بين دراسات الجدوى الاقتصادية وطبيعة القرارات الاستثمارية.</li>
+                <li>حيث إن كلما اعتمد القرار على دراسات شاملة ودقيقة وموضوعية وعلمية، كلما كانت القرارات أكثر نجاحاً
+                    وأماناً في تحقيق
+                    الأهداف.</li>
+            </ul>
+            <p class="m-0" data-aos="fade-down" data-aos-duration="1000">أولاً: دراسات الجدوى الأوليـّة.</p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>دراسات الجدوى الأوليّة وهي عبارة عن دراسة أو تقرير أوّلي يمثّل الخطوط العامة عن كافة جوانب
+                    المشروع أو المشروعات
+                    المقترحة.</li>
+                <li>تلك التي يمكن من خلالها التوصّل إلى اتخاذ قرار إما بالتخلي عن المشروع أو الانتقال إلى دراسة أكثر
+                    تفصيلاً.</li>
+                <li>كما إن نتيجة لهذه الدراسة يتم التخلي عن المشروع أو الانتقال إلى الدراسة التفصيلية.</li>
+            </ul>
+            <p class="m-0" data-aos="fade-down" data-aos-duration="1000">ثانياً: دراسات الجدوى التفصيليّة.</p>
+            <ul data-aos="fade-down" data-aos-duration="1000">
+                <li>دراسات الجدوى التفصيليّة: عبارة عن دراسات لاحقة لدراسات الجدوى الأولية، ولكنها أكثر تفصيلاً ودقة
+                    وشمولية منها.</li>
+                <li>وهي بمثابة تقرير مفصّل يشمل كافة جوانب المشروع المقترح، والتي على أساسها تستطيع الادارة العليا
+                    أن تتخذ قرارها.
+                <li class="me-5">إما بالتخلي عن المشروع نهائياً أو الانتقال إلى مرحلة التنفيذ.</li>
+
+                </li>
+                <li>وتعتبر دراسات الجدوى الأولية والتفصيلية متكاملة ومتتالية، ولا يمكن الاكتفاء بدراسة واحدة لكي
+                    تكون بديلة عن الدراسة
+                    الأخرى أي ليست معوّضة.</li>
+                <li>ونتيجة لهذه الدراسة يتم إما التخلي عن المشروع أو البدء بعملية التنفيذ.</li>
+            </ul>
+        </div>
+        <div class="row-three">
+            <h2 data-aos="fade-down" data-aos-duration="1000">اقرأ المزيد</h2>
+            <div class="row gy-5">
+                <div class="col-lg-6 col-12">
+                    <div class="row-three-block-read-more" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="one-div">
+                            <img src="../imgs/read-more-in-blog-1.png" class="img-fluid" alt="img">
+                            <div class="group-buttons">
+                                <a href="#">تحليل</a>
+                                <a href="#">تسويق</a>
+                            </div>
+                        </div>
+                        <div class="info-row-three-block-read-more">
+                            <h4>دراسة الجدوى الاقتصادية</h4>
+                            <p>هذا النص هو نص تجريبي لتعويض نص حقيقي سيزود لاحقاً، هذا النص هو نص تجريبي لتعويض نص
+                                حقيقي سيزود لاحقاً، هذا النص هو نص
+                                تجريبي لتعويض نص حقيقي سيزود لاحقاً.</p>
+                            <a href="#">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="row-three-block-read-more">
+                        <div class="one-div">
+                            <img src="../imgs/read-more-in-blog-2.png" class="img-fluid" alt="img">
+                            <div class="group-buttons">
+                                <a href="#">تحليل</a>
+                                <a href="#">تسويق</a>
+                            </div>
+                        </div>
+                        <div class="info-row-three-block-read-more">
+                            <h4>دراسة الجدوى الاقتصادية</h4>
+                            <p>هذا النص هو نص تجريبي لتعويض نص حقيقي سيزود لاحقاً، هذا النص هو نص تجريبي لتعويض نص
+                                حقيقي سيزود لاحقاً، هذا النص هو نص
+                                تجريبي لتعويض نص حقيقي سيزود لاحقاً.</p>
+                            <a href="#">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

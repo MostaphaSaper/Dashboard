@@ -46,7 +46,13 @@ class FrontController extends Controller
         $tags = Tag::all();
         $articles = Article::all();
 
-        return view('website.article',compact('articles','tags'));
+        return view('website.articles',compact('articles','tags'));
+    }
+
+    public function article(Article $article)
+    {
+
+        return view('website.article',compact('article'));
     }
 
     public function comment_post(Request $request)
@@ -122,12 +128,12 @@ class FrontController extends Controller
 
         return view('front.pages.blog',compact('articles','tag'));
     }
-    public function article(Request $request,Article $article)
-    {
-        $article->load(['categories','comments'=>function($q){$q->where('reviewed',1);},'tags'])->loadCount(['comments'=>function($q){$q->where('reviewed',1);}]);
-        $this->views_increase_article($article);
-        return view('front.pages.article',compact('article'));
-    }
+    // public function article(Request $request,Article $article)
+    // {
+    //     $article->load(['categories','comments'=>function($q){$q->where('reviewed',1);},'tags'])->loadCount(['comments'=>function($q){$q->where('reviewed',1);}]);
+    //     $this->views_increase_article($article);
+    //     return view('front.pages.article',compact('article'));
+    // }
     public function page(Request $request,Page $page)
     {
 
