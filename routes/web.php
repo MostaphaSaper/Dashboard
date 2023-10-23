@@ -53,7 +53,7 @@ Route::get('/', [FrontController::class,'index'])->name('home');
 // Route::get('page/{page}',[FrontController::class,'page'])->name('page.show');
 // Route::get('tag/{tag}',[FrontController::class,'tag'])->name('tag.show');
 // Route::get('category/{category}',[FrontController::class,'category'])->name('category.show');
-// Route::get('article/{article}',[FrontController::class,'article'])->name('article.show');
+Route::get('article/{article}',[FrontController::class,'article'])->name('article.show');
 // Route::get('blog',[FrontController::class,'blog'])->name('blog');
 // Route::post('contact',[FrontController::class,'contact_post'])->name('contact-post');
 // Route::post('comment',[FrontController::class,'comment_post'])->name('comment-post');
