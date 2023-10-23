@@ -49,7 +49,8 @@ Route::prefix('/')->name('website.')->group(function () {
     Route::post('contact',[FrontController::class,'contact_message'])->name('contact-message');
     Route::get('/articles', [FrontController::class,'articles'])->name('articles');
     Route::get('articles/{article}',[FrontController::class,'article'])->name('article');
-    Route::get('gallery',[FrontController::class,'gallery'])->name('gallery');
+    Route::get('galleries',[FrontController::class,'galleries'])->name('galleries');
+    Route::get('galleries/{gallery}',[FrontController::class,'gallery'])->name('gallery');
 
 });
 Route::get('/index2', function(){return view('front.index2');})->name('index2');

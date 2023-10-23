@@ -55,11 +55,17 @@ class FrontController extends Controller
         return view('website.article',compact('article'));
     }
 
-    public function gallery(Article $article)
+    public function galleries()
     {
         $tags = Tag::all();
         $galleries = ProjectGallery::all();
-        return view('website.gallery',compact('galleries','tags'));
+        return view('website.galleries',compact('galleries','tags'));
+    }
+
+    public function gallery(ProjectGallery $gallery)
+    {
+        $tags = Tag::all();
+        return view('website.gallery',compact('gallery','tags'));
     }
 
     public function comment_post(Request $request)
