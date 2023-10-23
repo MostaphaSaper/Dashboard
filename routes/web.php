@@ -48,7 +48,7 @@ Route::prefix('/')->name('website.')->group(function () {
     Route::get('/contact', [FrontController::class,'contact'])->name('contact');
     Route::post('contact',[FrontController::class,'contact_message'])->name('contact-message');
     Route::get('/articles', [FrontController::class,'articles'])->name('articles');
-    Route::get('articles/{article}',[FrontController::class,'article'])->name('article.show');
+    Route::get('articles/{article}',[FrontController::class,'article'])->name('article');
 
 });
 Route::get('/index2', function(){return view('front.index2');})->name('index2');

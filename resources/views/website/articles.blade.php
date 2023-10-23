@@ -22,7 +22,7 @@
         <div class="main-block">
             @foreach ($articles as $article)
                 <div class="block">
-                    <a href="{{ route('website.article.show',$article) }}" data-aos="fade-up-left" data-aos-duration="1000">
+                    <a href="{{ route('website.article',$article) }}" data-aos="fade-up-left" data-aos-duration="1000">
                         <div class="top d-flex align-items-end one">
                             @foreach ($article->tags as $tag)
                                 <button>{{ $tag->tag_name }}</button>
