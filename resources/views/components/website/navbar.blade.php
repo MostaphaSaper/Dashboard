@@ -24,8 +24,8 @@
                 <div
                     class="col-md-6 text-start social-media-icons d-none d-md-flex justify-content-end align-items-center">
                     @if ($settings['phone'])
-                        <a href="https://api.whatsapp.com/send/?phone={{ $settings['phone'] }}4&text&type=phone_number&app_absent=0"
-                            target="_blank">
+                    <a href="https://api.whatsapp.com/send/?phone=966555881764&text&type=phone_number&app_absent=0"
+                    target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                 <style>
                                     svg {

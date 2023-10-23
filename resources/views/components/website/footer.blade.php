@@ -7,7 +7,7 @@
                     <p>شركة سلسلة هي أول شركة سعودية من نوعها في السوق السعودي</p>
                     <div class="media d-flex align-items-center">
                         @if ( $settings['phone'] )
-                            <a href="https://api.whatsapp.com/send/?phone={{ $settings['phone'] }}&text&type=phone_number&app_absent=0"
+                            <a href="https://api.whatsapp.com/send/?phone=966555881764&text&type=phone_number&app_absent=0"
                                 target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
                                     <style>
