@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row second-row gy-4">
-            <img src="{{ $article->main_image }}" class="col-12 img-fluid info-gallery-img" alt="info-gallery-img"
+            <img src="{{ $article->main_image() }}" class="col-12 img-fluid info-gallery-img" alt="info-gallery-img"
                 data-aos="fade-down" data-aos-duration="1000">
             <p class="col-12 mb-0" data-aos="fade-down" data-aos-duration="1000">{!! $article->description !!}</p>
         </div>

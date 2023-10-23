@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Article;
 use App\Models\Tag;
-use App\Models\Contact;
-use App\Models\ArticleComment;
 use App\Models\Page;
+use App\Models\Article;
+use App\Models\Contact;
 use App\Models\Category;
+use Illuminate\Http\Request;
+use App\Models\ArticleComment;
+use App\Models\ProjectGallery;
 
 
 class FrontController extends Controller
@@ -51,8 +52,14 @@ class FrontController extends Controller
 
     public function article(Article $article)
     {
-
         return view('website.article',compact('article'));
+    }
+
+    public function gallery(Article $article)
+    {
+        $tags = Tag::all();
+        $galleries = ProjectGallery::all();
+        return view('website.gallery',compact('galleries','tags'));
     }
 
     public function comment_post(Request $request)
