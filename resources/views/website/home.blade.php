@@ -1692,27 +1692,27 @@
                     <div class="last-blog-block">
                         <h4>انـضـم لـنـشـرتـنـا الـبـريـديـة</h4>
                         <p>مقالات غنية بالمعلومات المفيدة</p>
-                        <div class="d-flex flex-wrap">
-                            <input type="email" placeholder="البريد الالكتروني" class="form-control">
-                            <a href="https://slsalah.space/signup">
-                                <button>سجل الآن</button>
-                            </a>
-                        </div>
+                        <form method="POST" action="{{ route('website.mailing-list') }}">
+                            @csrf
+                            <div class="d-flex flex-wrap">
+                                <input type="email" name="email" placeholder="البريد الالكتروني" class="form-control">
+                                <button type="submit">سجل الآن</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-6 col-12" data-aos="fade-right" data-aos-duration="1000">
                     <div class="top position-relative">
                         <div>
-                            <button>تحليل</button>
-                            <button>تسويق</button>
+                            @foreach ($latest_article->tags as $tag)
+                                <button>{{ $tag->tag_name }}</button>
+                            @endforeach
                         </div>
                     </div>
                     <div class="bottom">
-                        <h5>دراسة الجدوى الاقتصادية</h5>
-                        <p>هذا النص هو نص تجريبي لتعويض نص حقيقي سيزود لاحقاً، هذا النص هو نص تجريبي لتعويض نص حقيقي
-                            سيزود لاحقاً، هذا النص هو نص
-                            تجريبي لتعويض نص حقيقي سيزود لاحقاً.</p>
-                        <a href="#">اقرأ المزيد</a>
+                        <h5>{{ $latest_article->title }}</h5>
+                        <p>{{ $latest_article->meta_description }}</p>
+                        <a href="{{ route('website.articles') }}">اقرأ المزيد</a>
                     </div>
                 </div>
             </div>
@@ -1734,7 +1734,8 @@
                     <p>استشارة مجانية لمدة 30 دقيقة</p>
                 </div>
                 <div class="modal-body">
-                    <form class="row needs-validation" novalidate style="width: 100%; margin: auto;">
+                    <form class="row needs-validation" method="POST" action="{{ route('website.consulting-post') }}" novalidate style="width: 100%; margin: auto;">
+                        @csrf
                         <div class="col-12">
                             <label for="validationCustom01" class="form-label mb-0">
                                 الاسم الكامل
@@ -1748,7 +1749,7 @@
                                         d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z" />
                                 </svg>
                             </label>
-                            <input type="text" class="form-control" id="validationCustom01" value="" placeholder="الاسم"
+                            <input type="text" name="name" class="form-control" id="validationCustom01" value="" placeholder="الاسم"
                                 required>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز
@@ -1771,7 +1772,7 @@
                                         d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z" />
                                 </svg>
                             </label>
-                            <input type="text" class="form-control" id="validationCustom01" value=""
+                            <input type="text" name="address" class="form-control" id="validationCustom01" value=""
                                 placeholder="البلد، المدينة" required>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز
@@ -1794,7 +1795,7 @@
                                         d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z" />
                                 </svg>
                             </label>
-                            <input type="text" class="form-control" id="validationCustom01" value=""
+                            <input type="text" name="work_field" class="form-control" id="validationCustom01" value=""
                                 placeholder="مطاعم، بنوك، مقاهي،...." required>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز
@@ -1818,9 +1819,9 @@
                                 </svg>
                             </label>
                             <div class="flag-input">
-                                <input style="text-align: left; padding-left: 70px;" type="number" class="form-control"
-                                    id="validationCustom01" value="" placeholder="12345678952" required>
-                                <img src="imgs/icons/Saudi-Arabia-Flag.png" class="img-fluid" alt="flag">
+                                <input style="text-align: left; padding-left: 70px;" type="tel" class="form-control"
+                                    id="validationCustom01" name="phone" value="" placeholder="12345678952" required>
+                                <img src="{{ asset('website/imgs/icons/Saudi-Arabia-Flag.png') }}" class="img-fluid" alt="flag">
                             </div>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز
@@ -1844,7 +1845,7 @@
                                 </svg>
                             </label>
                             <input style="text-align: left; padding-left: 24px;" type="email" class="form-control"
-                                id="validationCustom01" value="" placeholder="example@gmail.com" required>
+                                id="validationCustom01" value="" name="email" placeholder="example@gmail.com" required>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز
                             </div>
@@ -1866,7 +1867,7 @@
                                         d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z" />
                                 </svg>
                             </label>
-                            <input type="text" class="form-control" id="validationCustom01" value=""
+                            <input type="text" name="consulting_topic" class="form-control" id="validationCustom01" value=""
                                 placeholder="موضوع الاستشارة" required>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز
@@ -1888,7 +1889,7 @@
                                         d="M208 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V172.9l122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7L352 256l122 70.4c15.3 8.8 20.5 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7L304 339.1V480c0 17.7-14.3 32-32 32H240c-17.7 0-32-14.3-32-32V339.1L86 409.6c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7L160 256 38 185.6c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7C51.1 98.8 70.7 93.6 86 102.4l122 70.4V32z" />
                                 </svg>
                             </label>
-                            <textarea type="text" class="form-control" id="validationCustom01" value=""
+                            <textarea type="text" name="Explanation" class="form-control" id="validationCustom01" value=""
                                 placeholder="نبذة عن الاستشارة المطلوبة" required></textarea>
                             <div class="valid-feedback mt-2 ">
                                 ممتاز

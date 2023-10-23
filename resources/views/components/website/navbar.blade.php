@@ -65,19 +65,19 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars"></span>
             </button>
-            <a class="navbar-brand d-block d-lg-none" href="index.html">
+            <a class="navbar-brand d-block d-lg-none" href="{{ route('home') }}">
                 <img src="{{ asset('website/imgs/logo.png') }}" alt="logo">
             </a>
-            <a class="nav-link d-none d-lg-block" href="#testimonial">
+            <a class="nav-link d-none d-lg-block" href="{{ route('home') }}#testimonial">
                 <button class="ask-request">اطلب استشارة</button>
             </a>
             <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav text-center py-4">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">الصفحة الرئيسية</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">الصفحة الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/who_we_ara.html">من نحن</a>
+                        <a class="nav-link" href="{{ route('website.about') }}">من نحن</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -144,15 +144,15 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/gallery.html">معرض الأعمال</a>
+                        <a class="nav-link" href="{{ route('website.galleries') }}">معرض الأعمال</a>
                     </li>
                     <li class=" nav-item">
-                        <a class="nav-link" href="pages/blog.html">المدونة</a>
+                        <a class="nav-link" href="{{ route('website.articles') }}">المدونة</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/contact_us.html">اتصل بنا</a>
+                        <a class="nav-link" href="{{ route('website.contact') }}">اتصل بنا</a>
                     </li>
-                    <a class="nav-link d-block d-lg-none" href="#testimonial">
+                    <a class="nav-link d-block d-lg-none" href="{{ route('home') }}#testimonial">
                         <button class="ask-request">اطلب استشارة</button>
                     </a>
                     <div
@@ -184,7 +184,7 @@
                     </div>
                 </ul>
             </div>
-            <a class="navbar-brand d-none d-lg-block" href="index.html">
+            <a class="navbar-brand d-none d-lg-block" href="{{ route('home') }}">
                 <img src="{{ asset('website/imgs/logo.png') }}" alt="logo">
             </a>
         </nav>

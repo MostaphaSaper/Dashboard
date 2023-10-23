@@ -7,9 +7,11 @@ use App\Models\Page;
 use App\Models\Article;
 use App\Models\Contact;
 use App\Models\Category;
+use App\Models\MailingList;
 use Illuminate\Http\Request;
 use App\Models\ArticleComment;
 use App\Models\ProjectGallery;
+use App\Models\ConsultingRequest;
 
 
 class FrontController extends Controller
@@ -17,7 +19,9 @@ class FrontController extends Controller
 
     public function index(Request $request)
     {
-        return view('website.home');
+        $latest_article = Article::firstOrFail();
+        $galleries = ProjectGallery::latest()->take(5)->get();
+        return view('website.home',compact('latest_article','galleries'));
     }
 
     public function about(Request $request)
@@ -66,6 +70,29 @@ class FrontController extends Controller
     {
         $tags = Tag::all();
         return view('website.gallery',compact('gallery','tags'));
+    }
+
+    public function consulting_post(Request $request)
+    {
+        ConsultingRequest::create([
+            'user_id'=>auth()->check()?auth()->id():NULL,
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'consulting_topic'=>$request->consulting_topic,
+            'Explanation'=>$request->Explanation,
+            'work_field'=>$request->work_field
+        ]);
+        return view('website.home');
+    }
+
+    public function mailing_list(Request $request)
+    {
+        MailingList::create([
+            'user_id'=>auth()->check()?auth()->id():NULL,
+            'email'=>$request->email,
+        ]);
+        return view('website.home');
     }
 
     public function comment_post(Request $request)

@@ -47,10 +47,10 @@
                 <div class="footer-block">
                     <h4>عن سلسلة</h4>
                     <ul>
-                        <li><a href="index.html">الصفحة الرئيسية</a></li>
-                        <li><a href="pages/who_we_ara.html">من نحن</a></li>
-                        <li><a href="pages/blog.html">المدونة</a></li>
-                        <li><a href="pages/contact_us.html">اتصل بنا</a></li>
+                        <li><a href="{{ route('home') }}">الصفحة الرئيسية</a></li>
+                        <li><a href="{{ route('website.about') }}">من نحن</a></li>
+                        <li><a href="{{ route('website.articles') }}">المدونة</a></li>
+                        <li><a href="{{ route('website.contact') }}">اتصل بنا</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,12 +85,12 @@
                                 </a>
                             </li>
                         @endif
-                        {{-- <li>
+                        <li>
                             <a href="tel:+966112074129">
                                 <img src="{{ asset('website/imgs/icons/phone.svg') }}" alt="phone-icon" class="img-fluid icon">
                                 <span dir="ltr">+966 112 07 4129</span>
                             </a>
-                        </li> --}}
+                        </li>
                         @if ( $settings['contact_email'] )
                             <li>
                                 <a href="mailto:{{ $settings['contact_email'] }}">
