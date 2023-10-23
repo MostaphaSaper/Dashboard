@@ -14,9 +14,6 @@
 
 <body>
 
-
-    @include('components.website.header')
-
     @include('components.website.navbar')
 
     @yield('content')

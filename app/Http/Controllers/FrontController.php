@@ -19,6 +19,12 @@ class FrontController extends Controller
         return view('website.home');
     }
 
+    public function about(Request $request)
+    {
+        return view('website.about');
+    }
+
+
     public function comment_post(Request $request)
     {
         if(auth()->check()){
