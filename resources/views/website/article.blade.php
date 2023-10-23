@@ -21,9 +21,9 @@
         </div>
         <div class="main-block">
             @foreach ($articles as $article)
-                <div class="block">
+                <div class="block" >
                     <a href="blog_info.html" data-aos="fade-up-left" data-aos-duration="1000">
-                        <div class="top d-flex align-items-end one">
+                        <div class="top d-flex align-items-end one" style="background: {{ $article->main_image }} no-repeat top center/cover;">
                             <button>تحليل</button>
                             <button>تسويق</button>
                         </div>

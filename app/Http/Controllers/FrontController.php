@@ -24,6 +24,30 @@ class FrontController extends Controller
         return view('website.about');
     }
 
+    public function contact()
+    {
+        return view('website.contact');
+    }
+
+    public function contact_message(Request $request)
+    {
+        Contact::create([
+            'user_id'=>auth()->check()?auth()->id():NULL,
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'message'=>$request->message
+        ]);
+        return view('website.contact');
+    }
+
+    public function articles()
+    {
+        $tags = Tag::all();
+        $articles = Article::all();
+
+        return view('website.article',compact('articles','tags'));
+    }
 
     public function comment_post(Request $request)
     {

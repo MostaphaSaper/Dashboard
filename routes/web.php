@@ -45,6 +45,10 @@ Auth::routes();
 Route::prefix('/')->name('website.')->group(function () {
     Route::get('/', [FrontController::class,'index'])->name('home');
     Route::get('/about', [FrontController::class,'about'])->name('about');
+    Route::get('/contact', [FrontController::class,'contact'])->name('contact');
+    Route::post('contact',[FrontController::class,'contact_message'])->name('contact-message');
+    Route::get('/articles', [FrontController::class,'articles'])->name('articles');
+
 });
 Route::get('/index2', function(){return view('front.index2');})->name('index2');
 Route::get('/', [FrontController::class,'index'])->name('home');
