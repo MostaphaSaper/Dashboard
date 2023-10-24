@@ -1,6 +1,11 @@
 @extends('layouts.website')
 @section('content')
 <section id="header" class="who-we-are-bg">
+    <div class="position-absolute top-0 z-index-999 fixed-navbar fixedNavbar">
+        <div class="container img-one-container">
+            @include('components.website.navbar')
+        </div>
+    </div>
     <div class="headerContent">
         <h1>من نحن</h1>
     </div>

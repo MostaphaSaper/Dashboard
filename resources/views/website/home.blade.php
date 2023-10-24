@@ -1,6 +1,33 @@
 @extends('layouts.website')
 @section('content')
-    <div class="swiper mySwiper layer-for-header-slider header">
+
+    <div class="slide-wrapper">
+        <div class="line"></div>
+        <input type="radio" name="slider" id="slider1" checked class="slider-input">
+        <label class="label-slider" for="slider1">
+            <span></span>
+        </label>
+        <div class="slide-slide slide1 heading">
+            <h1>من المملكة موطن الرّيادة <br class="d-block d-md-none"> ورمز الطموح</h1>
+        </div>
+
+        <input type="radio" name="slider" id="slider2" class="slider-input">
+        <label class="label-slider" for="slider2">
+            <span></span>
+        </label>
+        <div class="slide-slide slide2 heading">
+            <h1>إلى رائدي الأعمال أصحاب الرّؤى <br class="d-block d-md-none"> وفكر التطوير</h1>
+        </div>
+
+        <input type="radio" name="slider" id="slider3" class="slider-input">
+        <label class="label-slider" for="slider3">
+            <span></span>
+        </label>
+        <div class="slide-slide slide3 heading">
+            <h1>سلسلة معكم لتحقيق الرؤيا <br class="d-block d-md-none"> وتحويلها إلى واقع</h1>
+        </div>
+    </div>
+    {{-- <div class="swiper mySwiper layer-for-header-slider header">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="{{ asset('website/imgs/home-page-1.webp') }}" alt="img" class="img-fluid">
@@ -20,7 +47,7 @@
             <span>2</span>
             <span>3</span>
         </div>
-    </div>
+    </div> --}}
     <section id="video">
         <div class="container">
             <div class="row mx-auto col-md-8">
