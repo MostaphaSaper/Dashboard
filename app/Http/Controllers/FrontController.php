@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Models\ArticleComment;
 use App\Models\ProjectGallery;
 use App\Models\ConsultingRequest;
+use Illuminate\Support\Facades\Validator;
 
 
 class FrontController extends Controller
@@ -83,16 +84,25 @@ class FrontController extends Controller
             'Explanation'=>$request->Explanation,
             'work_field'=>$request->work_field
         ]);
-        return view('website.home');
+        return redirect('/');
     }
 
     public function mailing_list(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            toastr()->error('يرجى ادخال البريد الالكتروني');
+            return redirect('/');
+        }
         MailingList::create([
             'user_id'=>auth()->check()?auth()->id():NULL,
             'email'=>$request->email,
         ]);
-        return view('website.home');
+        toastr()->success('تم التسجيل بنجاح');
+        return redirect('/');
     }
 
     public function comment_post(Request $request)

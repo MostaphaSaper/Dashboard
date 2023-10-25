@@ -44,6 +44,7 @@
     <script src="{{ asset('website/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('website/js/main.js') }}"></script>
     <script src="{{ asset('website/js/forHeaderSlider.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     @livewireScripts
 </body>
