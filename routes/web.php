@@ -1,41 +1,42 @@
 <?php
 # Backend Controllers
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\BackendAdminController;
-use App\Http\Controllers\Backend\BackendNotificationsController;
-use App\Http\Controllers\Backend\BackendHelperController;
-use App\Http\Controllers\Backend\BackendTestController;
-use App\Http\Controllers\Backend\BackendProfileController;
-use App\Http\Controllers\Backend\BackendArticleController;
-use App\Http\Controllers\Backend\BackendProjectGalleryController;
-use App\Http\Controllers\Backend\BackendArticleCommentController;
-use App\Http\Controllers\Backend\BackendConsultingRequestController;
-use App\Http\Controllers\Backend\BackendSiteMapController;
-use App\Http\Controllers\Backend\BackendSettingController;
-use App\Http\Controllers\Backend\BackendContactController;
-use App\Http\Controllers\Backend\BackendCategoryController;
-use App\Http\Controllers\Backend\BackendRedirectionController;
-use App\Http\Controllers\Backend\BackendUserController;
-use App\Http\Controllers\Backend\BackendTrafficsController;
-use App\Http\Controllers\Backend\BackendPageController;
-use App\Http\Controllers\Backend\BackendMailingListController;
-use App\Http\Controllers\Backend\BackendMenuController;
-use App\Http\Controllers\Backend\BackendMenuLinkController;
-use App\Http\Controllers\Backend\BackendFileController;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\FrontendServiceController;
+use App\Http\Controllers\FrontendProfileController;
 use App\Http\Controllers\Backend\BackendFaqController;
-use App\Http\Controllers\Backend\BackendContactReplyController;
-use App\Http\Controllers\Backend\BackendAnnouncementController;
-use App\Http\Controllers\Backend\BackendPermissionController;
-use App\Http\Controllers\Backend\BackendUserPermissionController;
-use App\Http\Controllers\Backend\BackendUserRoleController;
-use App\Http\Controllers\Backend\BackendRoleController;
 use App\Http\Controllers\Backend\BackendTagController;
+use App\Http\Controllers\Backend\BackendFileController;
+use App\Http\Controllers\Backend\BackendMenuController;
+use App\Http\Controllers\Backend\BackendPageController;
+use App\Http\Controllers\Backend\BackendRoleController;
+use App\Http\Controllers\Backend\BackendTestController;
+use App\Http\Controllers\Backend\BackendUserController;
+use App\Http\Controllers\Backend\BackendAdminController;
+use App\Http\Controllers\Backend\BackendHelperController;
 use App\Http\Controllers\Backend\BackendPluginController;
+use App\Http\Controllers\Backend\BackendArticleController;
+use App\Http\Controllers\Backend\BackendContactController;
+use App\Http\Controllers\Backend\BackendProfileController;
+use App\Http\Controllers\Backend\BackendSettingController;
+use App\Http\Controllers\Backend\BackendSiteMapController;
+use App\Http\Controllers\Backend\BackendCategoryController;
+use App\Http\Controllers\Backend\BackendMenuLinkController;
+use App\Http\Controllers\Backend\BackendTrafficsController;
+use App\Http\Controllers\Backend\BackendUserRoleController;
+use App\Http\Controllers\Backend\BackendPermissionController;
+use App\Http\Controllers\Backend\BackendMailingListController;
+use App\Http\Controllers\Backend\BackendRedirectionController;
+use App\Http\Controllers\Backend\BackendAnnouncementController;
+use App\Http\Controllers\Backend\BackendContactReplyController;
+use App\Http\Controllers\Backend\BackendNotificationsController;
+use App\Http\Controllers\Backend\BackendArticleCommentController;
 
 
 # Frontend Controllers
-use App\Http\Controllers\FrontController;
-use App\Http\Controllers\FrontendProfileController;
+use App\Http\Controllers\Backend\BackendProjectGalleryController;
+use App\Http\Controllers\Backend\BackendUserPermissionController;
+use App\Http\Controllers\Backend\BackendConsultingRequestController;
 
 Auth::routes();
 
@@ -44,15 +45,24 @@ Auth::routes();
 
 Route::prefix('/')->name('website.')->group(function () {
     Route::get('/', [FrontController::class,'index'])->name('home');
-    Route::get('/about', [FrontController::class,'about'])->name('about');
-    Route::get('/contact', [FrontController::class,'contact'])->name('contact');
+    Route::get('about', [FrontController::class,'about'])->name('about');
+    Route::get('contact', [FrontController::class,'contact'])->name('contact');
     Route::post('contact',[FrontController::class,'contact_message'])->name('contact-message');
-    Route::get('/articles', [FrontController::class,'articles'])->name('articles');
+    Route::get('articles', [FrontController::class,'articles'])->name('articles');
     Route::get('articles/{article}',[FrontController::class,'article'])->name('article');
     Route::get('galleries',[FrontController::class,'galleries'])->name('galleries');
     Route::get('galleries/{gallery}',[FrontController::class,'gallery'])->name('gallery');
     Route::post('consulting',[FrontController::class,'consulting_post'])->name('consulting-post');
     Route::post('mailing-list',[FrontController::class,'mailing_list'])->name('mailing-list');
+    Route::prefix('services')->name('services.')->group(function () {
+        Route::get('advertising',[FrontendServiceController::class,'advertising'])->name('advertising');
+        Route::get('finiancial-consulting',[FrontendServiceController::class,'finiancial_consulting'])->name('finiancial-consulting');
+        Route::get('human-consulting',[FrontendServiceController::class,'human_consulting'])->name('human-consulting');
+        Route::get('technical-consulting',[FrontendServiceController::class,'technical_consulting'])->name('technical-consulting');
+        Route::get('marketing-consulting',[FrontendServiceController::class,'marketing_consulting'])->name('marketing-consulting');
+        Route::get('marketing-services',[FrontendServiceController::class,'marketing_services'])->name('marketing-services');
+        Route::get('legal-advice',[FrontendServiceController::class,'legal_advice'])->name('legal-advice');
+    });
 });
 Route::get('/index2', function(){return view('front.index2');})->name('index2');
 Route::get('/', [FrontController::class,'index'])->name('home');

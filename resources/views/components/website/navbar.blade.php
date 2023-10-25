@@ -95,19 +95,19 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="d-flex align-items-center dropdown-item"
-                                    href="pages/financial_consulting.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/حلول مالية وادارية.svg"
+                                    href="{{ route('website.services.finiancial-consulting') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/حلول مالية وادارية') }}.svg"
                                         alt="icon">
                                     الاستشارات والحلول الإدارية و المالية
                                 </a>
-                                <a class="d-flex align-items-center dropdown-item" href="pages/legal_advice.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/الاستشارات والحلول القانونية.svg"
+                                <a class="d-flex align-items-center dropdown-item" href="{{ route('website.services.legal-advice') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/الاستشارات والحلول القانونية.svg') }}"
                                         alt="icon">
                                     الاستشارات والحلول القانونية
                                 </a>
                                 <a class="d-flex align-items-center dropdown-item"
-                                    href="pages/human_consulting.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/استشارات الموارد البشرية.svg"
+                                    href="{{ route('website.services.human-consulting') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/استشارات الموارد البشرية.svg') }}"
                                         alt="icon">
                                     استشارات الموارد
                                     البشرية
@@ -115,28 +115,28 @@
                             </li>
                             <li>
                                 <a class="d-flex align-items-center dropdown-item"
-                                    href="pages/technical_consulting.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/الخدمات التقنية.svg" alt="icon">
+                                    href="{{ route('website.services.technical-consulting') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/الخدمات التقنية.svg') }}" alt="icon">
                                     الاستشارات
                                     والحلول
                                     التقنية
                                 </a>
                                 <a class="d-flex align-items-center dropdown-item"
-                                    href="pages/marketing_consulting.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/ايقونة الاستشارات والحلول التسويقية.svg"
+                                    href="{{ route('website.services.marketing-consulting') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/ايقونة الاستشارات والحلول التسويقية.svg') }}"
                                         alt="icon">
                                     الاستشارات والحلول التسويقية
                                 </a>
                                 <a class="d-flex align-items-center dropdown-item"
-                                    href="pages/marketing_services.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/خدمات تسويقية.svg" alt="icon">
+                                    href="{{ route('website.services.marketing-services') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/خدمات تسويقية.svg') }}" alt="icon">
                                     الخدمات التسويقية
                                 </a>
                             </li>
                             <li>
                                 <a class="d-flex align-items-center dropdown-item"
-                                    href="pages/advertising_services.html">
-                                    <img src="./imgs/ايقونات الخدمات في شريط الهيدر/التصميم والحملات الاعلانية.svg"
+                                    href="{{ route('website.services.advertising') }}">
+                                    <img src="{{ asset('website/imgs/ايقونات الخدمات في شريط الهيدر/التصميم والحملات الاعلانية.svg') }}"
                                         alt="icon">
                                     خدمات التصميم والحملات الإعلانية
                                 </a>
