@@ -2,11 +2,7 @@
 @section('content')
 
 <section id="header" class="blog-bg">
-    <div class="position-absolute top-0 z-index-999 fixed-navbar fixedNavbar">
-        <div class="container img-one-container">
-            @include('components.website.navbar')
-        </div>
-    </div>
+     @include('components.website.navbar')
     <div class="headerContent">
         <h1>المدوّنة</h1>
     </div>

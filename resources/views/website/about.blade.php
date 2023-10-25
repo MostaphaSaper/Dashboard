@@ -1,11 +1,7 @@
 @extends('layouts.website')
 @section('content')
 <section id="header" class="who-we-are-bg">
-    <div class="position-absolute top-0 z-index-999 fixed-navbar fixedNavbar">
-        <div class="container img-one-container">
-            @include('components.website.navbar')
-        </div>
-    </div>
+    @include('components.website.navbar')
     <div class="headerContent">
         <h1>من نحن</h1>
     </div>
@@ -20,7 +16,7 @@
                 والقانونية ودراسات الجدوى وتخطيط الأعمال والتسويق وتأهيل الموارد البشرية بتوجيهات من خبراء
                 محترفين. في سلسلة نلبي
                 احتياجات رواد الأعمال والقائمين على المشاريع في مختلف المجالات الصناعية والتجارية والتقنية.</p>
-            <img src="{{ ('website/imgs/صفحة من نحن/صورة رقم3.svg') }}" class="img-fluid avatar" data-aos="fade-right"
+            <img src="{{ asset('website/imgs/صفحة من نحن/صورة رقم3.png') }}" class="img-fluid avatar" data-aos="fade-right"
                 data-aos-duration="1000" alt="img">
         </div>
     </div>

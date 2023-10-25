@@ -1,6 +1,7 @@
 @extends('layouts.website')
 @section('content')
     <section id="header" class="caontact-us-bg">
+        @include('components.website.navbar')
         <div class="headerContent">
             <h1>اتصل بنا</h1>
         </div>

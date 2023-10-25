@@ -27,27 +27,9 @@
             <h1>سلسلة معكم لتحقيق الرؤيا <br class="d-block d-md-none"> وتحويلها إلى واقع</h1>
         </div>
     </div>
-    {{-- <div class="swiper mySwiper layer-for-header-slider header">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="{{ asset('website/imgs/home-page-1.webp') }}" alt="img" class="img-fluid">
-                <h1>من المملكة موطن الرّيادة ورمز الطموح</h1>
-            </div>
-            <div class="swiper-slide">
-                <img src="{{ asset('website/imgs/home-page-2.webp') }}" alt="img" class="img-fluid">
-                <h1>إلى رائدي الأعمال أصحاب الرّؤى وفكر التطوير</h1>
-            </div>
-            <div class="swiper-slide">
-                <img src="{{ asset('website/imgs/home-page-3.webp') }}" alt="img" class="img-fluid">
-                <h1>سلسلة معكم لتحقيق الرؤية وتحويلها إلى واقع</h1>
-            </div>
-        </div>
-        <div class="swiper-pagination number-of-sliders z-index-999">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-        </div>
-    </div> --}}
+
+    @include('components.website.navbar')
+
     <section id="video">
         <div class="container">
             <div class="row mx-auto col-md-8">
@@ -1729,8 +1711,9 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-12" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="top position-relative">
-                        <div>
+                    <div class="position-relative">
+                        <img src="{{ $latest_article->main_image() }}" class="top img-fluid" alt="img">
+                        <div class="btns">
                             @foreach ($latest_article->tags as $tag)
                                 <button>{{ $tag->tag_name }}</button>
                             @endforeach
@@ -1738,7 +1721,7 @@
                     </div>
                     <div class="bottom">
                         <h5>{{ $latest_article->title }}</h5>
-                        <p>{{ $latest_article->meta_description }}</p>
+                        <p> {{ $latest_article->meta_description }} </p>
                         <a href="{{ route('website.articles') }}">اقرأ المزيد</a>
                     </div>
                 </div>
