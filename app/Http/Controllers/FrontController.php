@@ -50,7 +50,6 @@ class FrontController extends Controller
     {
         $tags = Tag::all();
         $articles = Article::all();
-
         return view('website.articles',compact('articles','tags'));
     }
 
@@ -69,8 +68,8 @@ class FrontController extends Controller
 
     public function gallery(ProjectGallery $gallery)
     {
-        $tags = Tag::all();
-        return view('website.gallery',compact('gallery','tags'));
+        $all_galleries = ProjectGallery::orderBy('id','desc')->whereNotIn('id', [$gallery->id])->limit(2)->get();
+        return view('website.gallery',compact('gallery','all_galleries'));
     }
 
     public function consulting_post(Request $request)
