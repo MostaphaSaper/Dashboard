@@ -56,7 +56,8 @@ class FrontController extends Controller
 
     public function article(Article $article)
     {
-        return view('website.article',compact('article'));
+        $all_articles = Article::orderBy('id','desc')->whereNotIn('id', [$article->id])->limit(2)->get();
+        return view('website.article',compact('article','all_articles'));
     }
 
     public function galleries()
