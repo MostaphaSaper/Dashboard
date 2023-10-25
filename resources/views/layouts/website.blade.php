@@ -26,6 +26,7 @@
             height: 100%;
         }
     </style>
+    @livewireStyles
 
 </head>
 
@@ -44,7 +45,7 @@
     <script src="{{ asset('website/js/main.js') }}"></script>
     <script src="{{ asset('website/js/forHeaderSlider.js') }}"></script>
 
-
+    @livewireScripts
 </body>
 
 </html>

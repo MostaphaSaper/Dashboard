@@ -10,8 +10,7 @@
 
 <section id="our-gallery">
     <div class="container">
-        <div class="filter-text" data-aos="fade-down" data-aos-duration="1000">
-            {{-- <span class="active">تسويق</span> --}}
+        {{-- <div class="filter-text" data-aos="fade-down" data-aos-duration="1000">
             @foreach ($tags as $tag)
                 <span>{{ $tag->tag_name }}</span>
             @endforeach
@@ -39,12 +38,12 @@
                     </a>
                 </div>
             @endforeach
-        </div>
-        <div class="text-center"><button class="read-more">اقرأ المزيد</button></div>
+        </div> --}}
+        <livewire:article-search/>
         <div class="search-2">
-            <h5 data-aos="fade-down" data-aos-duration="1000">انـضـم لـنـشـرتـنـا الـبـريـديـة</h5>
-            <p data-aos="fade-down" data-aos-duration="1000">مقالات غنية بالمعلومات المفيدة</p>
-            <div data-aos="fade-down" data-aos-duration="1000">
+            <h5 >انـضـم لـنـشـرتـنـا الـبـريـديـة</h5>
+            <p >مقالات غنية بالمعلومات المفيدة</p>
+            <div >
                 <input type="text" placeholder="البريد الالكتروني" class="form-control">
                 <a href="https://slsalah.space/signup">
                     <button>سجل الآن</button>
