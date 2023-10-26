@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'المدونة')
 @section('content')
 
 <section id="header" class="blog-bg">

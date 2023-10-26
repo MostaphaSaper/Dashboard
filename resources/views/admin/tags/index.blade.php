@@ -2,11 +2,11 @@
 @section('content')
 <div class="col-12 p-3">
 	<div class="col-12 col-lg-12 p-0 main-box">
-	 
+
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
-					الوسوم 
+					الوسوم
 				</div>
 				<div class="col-12 col-lg-4 p-2">
 				</div>
@@ -30,8 +30,8 @@
 		</div>
 		<div class="col-12 p-3" style="overflow:auto">
 			<div class="col-12 p-0" style="min-width:1100px;">
-				
-			
+
+
 			<table class="table table-bordered  table-hover">
 				<thead>
 					<tr>
@@ -51,7 +51,7 @@
 						<td>{{$tag->arabic_name}}</td>
 						<td>{{$tag->english_name}}</td>
 						<td>{{$tag->slug}}</td>
-					 
+
 						<td style="width: 270px;">
 							@can('tags-update')
 							<a href="{{route('admin.tags.edit',$tag)}}">
@@ -70,6 +70,11 @@
 						</td>
 					</tr>
 					@endforeach
+                    @if ($tags->count() <= 0)
+                        <tr>
+                            <td colspan="6 " style="text-align: center;vertical-align: middle;"> لا توجد نتائج للبحث </td>
+                        </tr>
+                    @endif
 				</tbody>
 			</table>
 			</div>

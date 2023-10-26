@@ -18,7 +18,7 @@
 	.taber:not(.active){
 		display: none;
 	}
-	
+
 </style>
 <div class="col-12 p-3 row">
 	 <div class="col-12 p-2 p-lg-4 main-box" style="min-height: 80vh;border-radius:10px">
@@ -49,7 +49,7 @@
 	 	@csrf
 	 	@method("PUT")
 	 	<div class="col-12 col-lg-8 px-3 py-5">
-	 		 
+
 	 		<div class="col-12 row p-0 taber active" id="general-tab">
 		 		<div class="col-12 px-0 d-flex mb-3 row pb-3">
 		 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -57,15 +57,15 @@
 		 			</div>
 		 			<div class="col-12 col-lg-9 px-2">
 		 				<textarea name="settings[address]" required class="form-control">{{$settings['address']}}</textarea>
-		 			</div> 
+		 			</div>
 		 		</div>
 		 		<div class="col-12 px-0 d-flex mb-3 row pb-3">
 		 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
-		 				الايميل 
+		 				الايميل
 		 			</div>
 		 			<div class="col-12 col-lg-9 px-2">
 		 				<input type="email" name="settings[contact_email]" required class="form-control" value="{{$settings['contact_email']}}" >
-		 			</div> 
+		 			</div>
 		 		</div>
 				 <div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -73,7 +73,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[linkedin_link]" required class="form-control" value="{{$settings['linkedin_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -81,7 +81,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[twitter_link]" required class="form-control" value="{{$settings['twitter_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -89,7 +89,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[facebook_link]" required class="form-control" value="{{$settings['facebook_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -97,7 +97,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[youtube_link]" required class="form-control" value="{{$settings['youtube_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -105,15 +105,23 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[instagram_link]" required class="form-control" value="{{$settings['instagram_link']}}" >
-					</div> 
+					</div>
 				</div>
 				 <div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
-						رقم الاتصال
+						رقم الجوال
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="" name="settings[phone]" required class="form-control" value="{{$settings['phone']}}" maxlength="190">
-					</div> 
+					</div>
+				</div>
+                <div class="col-12 px-0 d-flex mb-3 row pb-3">
+					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
+						رقم المكتب
+					</div>
+					<div class="col-12 col-lg-9 px-2">
+						<input type="" name="settings[phone2]" required class="form-control" value="{{$settings['phone2']}}" maxlength="190">
+					</div>
 				</div>
 	 		</div>
 
@@ -127,7 +135,7 @@
 		 				<div class="col-12 p-2">
 		 					<img src="{{$settings['get_website_cover']}}" style="width:100px;max-height: 100px;">
 		 				</div>
-		 			</div> 
+		 			</div>
 		 		</div>
 		 		<div class="col-12 px-0 d-flex mb-3 row pb-3">
 		 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -136,7 +144,7 @@
 
 		 			<div class="col-12 col-lg-9 px-2">
 		 				<input type="color" name="settings[main_color]"  value="{{$settings['main_color']}}" maxlength="190">
-		 			</div> 
+		 			</div>
 		 		</div>
 		 		<div class="col-12 px-0 d-flex mb-3 row pb-3">
 		 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -144,7 +152,7 @@
 		 			</div>
 		 			<div class="col-12 col-lg-9 px-2">
 		 				<input type="color" name="settings[hover_color]"  value="{{$settings['hover_color']}}" maxlength="190">
-		 			</div> 
+		 			</div>
 		 		</div>
 		 		<div class="col-12 px-0 d-flex mb-3 row pb-3">
 		 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -155,7 +163,7 @@
 		 				<input type="hidden" name="settings[dashboard_dark_mode]" value="0" >
 						  <input class="form-check-input" type="checkbox" id="DarkModeInput" name="settings[dashboard_dark_mode]" {{$settings['dashboard_dark_mode']==1?'checked':""}} value="1">
 						</div>
-		 			</div> 
+		 			</div>
 		 		</div>
 		 	</div>
 
@@ -163,19 +171,11 @@
 
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
-						رقم الهاتف 2
-					</div>
-					<div class="col-12 col-lg-9 px-2">
-						<input type="" name="settings[phone2]" class="form-control" value="{{$settings['phone2']}}" maxlength="190">
-					</div> 
-				</div>
-				<div class="col-12 px-0 d-flex mb-3 row pb-3">
-					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
 						رقم واتس آب
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="" name="settings[whatsapp_phone]" class="form-control" value="{{$settings['whatsapp_phone']}}" >
-					</div> 
+					</div>
 				</div>
 
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
@@ -184,7 +184,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[telegram_link]" class="form-control" value="{{$settings['telegram_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -192,7 +192,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[whatsapp_link]" class="form-control" value="{{$settings['whatsapp_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -200,7 +200,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[tiktok_link]" class="form-control" value="{{$settings['tiktok_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -208,16 +208,16 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[nafezly_link]" class="form-control" value="{{$settings['nafezly_link']}}" >
-					</div> 
+					</div>
 				</div>
-	 		
+
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
 						رابط جيت هب
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[github_link]" class="form-control" value="{{$settings['github_link']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<br>
@@ -229,7 +229,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[another_link1]" class="form-control" value="{{$settings['another_link1']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -237,7 +237,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[another_link2]" class="form-control" value="{{$settings['another_link2']}}" >
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -245,7 +245,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="url" name="settings[another_link3]" class="form-control" value="{{$settings['another_link3']}}" >
-					</div> 
+					</div>
 				</div>
 	 		</div>
 			<div class="col-12 row p-0 taber" id="pages-tab">
@@ -256,9 +256,9 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<textarea  name="settings[contact_page]" class="form-control" style="min-height: 300px">{{$settings['contact_page']}}</textarea>
-					</div> 
+					</div>
 				</div>
-			
+
 			</div>
 			<div class="col-12 row p-0 taber" id="codes-tab">
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
@@ -267,7 +267,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<textarea name="settings[header_code]" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings['header_code']}}</textarea>
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -275,15 +275,15 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<textarea name="settings[footer_code]" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings['footer_code']}}</textarea>
-					</div> 
-				</div> 
+					</div>
+				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
 						ملف robots
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<textarea name="settings[robots_txt]" class="form-control" style="min-height: 200px;text-align: left;direction: ltr;">{{$settings['robots_txt']}}</textarea>
-					</div> 
+					</div>
 				</div>
 			</div>
 
@@ -294,7 +294,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<input type="" name="settings[website_name]" class="form-control" value="{{$settings['website_name']}}"  maxlength="190">
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -302,7 +302,7 @@
 					</div>
 					<div class="col-12 col-lg-9 px-2">
 						<textarea name="settings[website_bio]" class="form-control">{{$settings['website_bio']}}</textarea>
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -313,7 +313,7 @@
 						<div class="col-12 p-2">
 							<img src="{{$settings['get_website_logo']}}" style="width:100px;max-height: 100px;">
 						</div>
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -324,7 +324,7 @@
 						<div class="col-12 p-2">
 							<img src="{{$settings['get_website_wide_logo']}}" style="width:100px;max-height: 100px;">
 						</div>
-					</div> 
+					</div>
 				</div>
 				<div class="col-12 px-0 d-flex mb-3 row pb-3">
 					<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
@@ -335,26 +335,26 @@
 						<div class="col-12 p-2">
 							<img src="{{$settings['get_website_icon']}}" style="width:100px;max-height: 100px;">
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
 
 	 </div>
- 
+
 	 	<div class="col-12 col-lg-8 px-0 d-flex mb-3 row pb-3">
- 		 	
+
  		 	<div class="col-12 px-0 d-flex mb-3 row pb-3">
 	 			<div class="col-12 col-lg-3 px-2 text-lg-end pt-1 pb-3 pb-lg-0">
-	 				
+
 	 			</div>
 	 			<div class="col-12 col-lg-9 px-2">
 	 				<button class="btn pb-2 px-4" style="background: #ffa725;border-radius: 0px;color: #fff ">حفظ التغييرات</button>
-	 			</div> 
-	 		</div> 
+	 			</div>
+	 		</div>
 
  		</div>
 
 	  	</form>
-	 </div> 
+	 </div>
 </div>
 @endsection

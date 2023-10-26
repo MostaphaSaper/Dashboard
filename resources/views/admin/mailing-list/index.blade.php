@@ -7,7 +7,7 @@
 </style>
 <div class="col-12 p-3">
 	<div class="col-12 col-lg-12 p-0 main-box">
-	 
+
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
@@ -28,21 +28,19 @@
 		</div>
 		<div class="col-12 p-3" style="overflow:auto">
 			<div class="col-12 p-0" style="min-width:1100px;">
-				
-			
+
+
 			<table class="table table-bordered  table-hover">
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>المستخدم</th>
 						<th>البريد الالكتروني</th>
 					</tr>
-				</thead>  
+				</thead>
 				<tbody>
 					@foreach($mailing_lists as $mailing_list)
 					<tr>
 						<td>{{$mailing_list->id}}</td>
-						<td>{{$mailing_list->user->name}}</td>
 						<td>{{$mailing_list->email}}</td>
 					</tr>
 					@endforeach

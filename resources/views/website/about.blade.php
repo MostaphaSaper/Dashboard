@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'من نحن')
 @section('content')
 <section id="header" class="who-we-are-bg">
     @include('components.website.navbar')

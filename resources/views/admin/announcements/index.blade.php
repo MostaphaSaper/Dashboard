@@ -3,7 +3,7 @@
 
 <div class="col-12 p-3">
 	<div class="col-12 col-lg-12 p-0 main-box">
-	 
+
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row ">
 				<div class="col-12 col-lg-4 py-3 px-3">
@@ -29,13 +29,13 @@
 				</form>
 			</div>
 			<div class="col-12 col-lg-4 px-2 justify-content-end d-flex mb-2">
-	 			
+
 	 		</div>
 		</div>
 		<div class="col-12 p-3" style="overflow:auto">
 			<div class="col-12 p-0" style="min-width:1100px;">
-				
-			
+
+
 			<table class="table table-bordered  table-hover">
 		  <thead>
 		    <tr>
@@ -59,9 +59,9 @@
 		      	@can('announcements-update')
 		      	<a href="{{route('admin.announcements.edit',$announcement)}}" style="width: 30px;height: 30px;color: #fff;background: #2381c6;border-radius: 2px" class="d-flex align-items-center justify-content-center mx-1">
 		      		<span class="fal fa-edit"></span>
-		      	</a> 
+		      	</a>
 		      	@endcan
-		      	
+
 		      	@can('announcements-delete')
 		      	<a href="#" style="width: 30px;height: 30px;color: #fff;background: #c00;border-radius: 2px" class="d-flex align-items-center justify-content-center mx-1" onclick='var result = confirm("هل أنت متأكد من عملية الحذف");if (result) {$("#announcement_delete_{{$announcement->id}}").submit();}'>
 		      		<span class="fal fa-trash"></span>
@@ -72,11 +72,12 @@
 		      </td>
 		    </tr>
 		    @endforeach
+            
 		  </tbody>
-		</table> 
+		</table>
 		<div class="col-12 px-0 py-2">
 			{{$announcements->appends(request()->query())->render() }}
 		</div>
-	 </div> 
+	 </div>
 </div>
 @endsection

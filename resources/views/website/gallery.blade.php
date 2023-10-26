@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'معرض الأعمال')
 @section('content')
     <section id="header" class="info-gallery">
         @include('components.website.article_navbar')

@@ -74,13 +74,13 @@
             <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarNav">
                 <ul class="navbar-nav text-center py-4">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">الصفحة الرئيسية</a>
+                        <a class="nav-link {{ Request::is('/')  ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">الصفحة الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('website.about') }}">من نحن</a>
+                        <a class="nav-link {{ Request::is('about')  ? 'active' : '' }}" href="{{ route('website.about') }}">من نحن</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ Request::is('services/*')  ? 'active' : '' }} " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             الخدمات
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -144,13 +144,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('website.galleries') }}">معرض الأعمال</a>
+                        <a class="nav-link {{ Request::is('galleries*')  ? 'active' : '' }}" href="{{ route('website.galleries') }}">معرض الأعمال</a>
                     </li>
                     <li class=" nav-item">
-                        <a class="nav-link" href="{{ route('website.articles') }}">المدونة</a>
+                        <a class="nav-link {{ Request::is('articles*')  ? 'active' : '' }} " href="{{ route('website.articles') }}">المدونة</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('website.contact') }}">اتصل بنا</a>
+                        <a class="nav-link {{ Request::is('contact')  ? 'active' : '' }}" href="{{ route('website.contact') }}">اتصل بنا</a>
                     </li>
                     <a class="nav-link d-block d-lg-none" href="#testimonial">
                         <button class="ask-request">اطلب استشارة</button>

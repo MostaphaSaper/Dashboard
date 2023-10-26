@@ -2,11 +2,11 @@
 @section('content')
 <div class="col-12 p-3">
 	<div class="col-12 col-lg-12 p-0 main-box">
-	 
+
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
-					<span class="fas fa-requests"></span> طلبات الاستشارات 
+					<span class="fas fa-requests"></span> طلبات الاستشارات
 				</div>
 				<div class="col-12 col-lg-4 p-0">
 				</div>
@@ -23,8 +23,8 @@
 		</div>
 		<div class="col-12 p-3" style="overflow:auto">
 			<div class="col-12 p-0" style="min-width:1100px;">
-				
-			
+
+
 			<table class="table table-bordered  table-hover">
 				<thead>
 					<tr>
@@ -42,6 +42,7 @@
 				<tbody id="sortable-table">
 					@foreach($requests as $request)
 					<tr >
+						<td >{{$request->id}}</td>
 						<td >{{$request->name}}</td>
 						<td >{{$request->address}}</td>
 						<td >{{$request->work_field}}</td>
@@ -49,10 +50,10 @@
 						<td >{{$request->email}}</td>
 						<td >{{$request->consulting_topic}}</td>
 						<td >{{$request->Explanation}}</td>
-						
+
 						<td style="width: 170px;">
 
-					 
+
 
 							@can('requests-update')
 							<a href="{{route('admin.article-requests.edit',$request)}}">
@@ -71,6 +72,11 @@
 						</td>
 					</tr>
 					@endforeach
+                    @if ($requests->count() <= 0)
+                        <tr>
+                            <td colspan="9 " style="text-align: center;vertical-align: middle;"> لا توجد نتائج للبحث </td>
+                        </tr>
+                    @endif
 				</tbody>
 			</table>
 			</div>

@@ -11,9 +11,15 @@ class BackendConsultingRequestController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $requests = ConsultingRequest::orderBy('id','DESC')->paginate(100);
+        $requests =  ConsultingRequest::where(function($q)use($request){
+            if($request->id!=null)
+                $q->where('id',$request->id);
+            if($request->q!=null)
+                $q->where('name','LIKE','%'.$request->q.'%')->orWhere('work_field','LIKE','%'.$request->q.'%');
+        })->orderBy('id','DESC')->paginate();
+        // $requests = ConsultingRequest::orderBy('id','DESC')->paginate(100);
         return view('admin.consulting-requests.index',compact('requests'));
     }
 

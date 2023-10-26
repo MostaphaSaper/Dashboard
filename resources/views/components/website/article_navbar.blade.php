@@ -166,10 +166,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-3" href="{{ route('website.galleries') }}">معرض الأعمال</a>
+                        <a class="nav-link nav-link-3 {{ Request::is('galleries*')  ? 'active' : '' }}" href="{{ route('website.galleries') }}">معرض الأعمال</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-3 active" href="{{ route('website.articles') }}">المدونة</a>
+                        <a class="nav-link nav-link-3 {{ Request::is('articles*')  ? 'active' : '' }}" href="{{ route('website.articles') }}">المدونة</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-3" href="{{ route('website.contact') }}">اتصل بنا</a>

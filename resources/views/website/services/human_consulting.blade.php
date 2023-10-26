@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'الخدمات')
 @section('content')
 
     <section id="header" class="human-consulting-bg">

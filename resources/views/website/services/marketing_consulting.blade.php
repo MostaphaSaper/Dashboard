@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'الخدمات')
 @section('content')
 
     <section id="header" class="marketing-consulting-bg">
@@ -77,7 +78,7 @@
                 <p data-aos="fade-down" data-aos-duration="1000">
                     في مكتب سلسلة للاستشارات، نحن ملتزمون بتقديم خدمات عالية الجودة وتحقيق نتائج قابلة للقياس. اتصل بنا
                     اليوم للحصول على
-                    خدماتنا التسويقية والإبداعية وبدء رحلة النجاح الرقمي. 
+                    خدماتنا التسويقية والإبداعية وبدء رحلة النجاح الرقمي.
                 </p>
                 <a href="tel:+966112074129" class="call-us" data-aos="fade-down" data-aos-duration="1000">
                     <span>اتصل بنا</span>

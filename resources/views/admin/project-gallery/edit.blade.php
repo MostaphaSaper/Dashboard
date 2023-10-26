@@ -21,7 +21,7 @@
                         <div class="col-12 pt-3">
                             <select class="form-control select2-select" required name="tag_id[]"  multiple size="1" style="height:30px;opacity: 0;">
                                 @foreach($tags as $tag)
-                                <option value="{{$tag->id}}" @if(in_array($tag->id,$project_gallery->tags->pluck('id')->toArray())) selected @endif>{{$tag->tag_name}}</option>
+                                    <option value="{{$tag->id}}" @if(in_array($tag->id,$project_gallery->tags->pluck('id')->toArray())) selected @endif>{{$tag->tag_name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -50,7 +50,7 @@
                             محتوى المشروع
                         </div>
                         <div class="col-12 pt-3">
-                            <textarea name="project_content" required class="editor with-file-explorer">{{$project_gallery->project_content}}</textarea>
+                            <textarea name="project_content" class="editor with-file-explorer">{{$project_gallery->project_content}}</textarea>
                         </div>
                     </div>
                     <div class="col-12 p-2">

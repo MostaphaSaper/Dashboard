@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'اتصل بنا')
 @section('content')
     <section id="header" class="caontact-us-bg">
         @include('components.website.navbar')
@@ -81,22 +82,22 @@
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 @if ($settings['phone'] )
                                     <a target="_blank"
-                                        href="https://api.whatsapp.com/send/?phone={{ $settings['phone'] }}&text&type=phone_number&app_absent=0"
+                                        href="https://api.whatsapp.com/send/?phone=+966112074129&text&type=phone_number&app_absent=0"
                                         class="d-flex align-items-center">
                                         <img src="{{ asset('website/imgs/icons/phone-dark.svg') }}" alt="phone-icon" class="img-fluid">
                                         <div class="d-flex flex-column">
                                             <span class="main-title">الجوال</span>
-                                            <span class="child-title" dir="ltr">{{ $settings['phone'] }}</span>
+                                            <span class="child-title" dir="ltr">+966112074129</span>
                                         </div>
                                     </a>
                                 @endif
                             </div>
                             <div data-aos="fade-up" data-aos-duration="1000">
-                                <a href="tel:+966112074129" class="d-flex align-items-center">
+                                <a href="tel: {{ $settings['phone'] }} " class="d-flex align-items-center">
                                     <img src="{{ asset('website/imgs/icons/phone-dark.svg') }}" alt="phone-icon" class="img-fluid">
                                     <div class="d-flex flex-column">
                                         <span class="main-title">المكتب</span>
-                                        <span class="child-title" dir="ltr">+966 112 07 4129</span>
+                                        <span class="child-title" dir="ltr">{{ $settings['phone'] }}</span>
                                     </div>
                                 </a>
                             </div>

@@ -23,7 +23,7 @@ class BackendProjectGalleryController extends Controller
             if($request->id!=null)
                 $q->where('id',$request->id);
             if($request->q!=null)
-                $q->where('project_title','LIKE','%'.$request->q.'%')->orWhere('project_content','LIKE','%'.$request->q.'%');
+                $q->where('project_title','LIKE','%'.$request->q.'%')->orWhere('about_project','LIKE','%'.$request->q.'%');
         })->orderBy('id','DESC')->paginate();
         return view('admin.project-gallery.index',compact('project_galleries'));
     }

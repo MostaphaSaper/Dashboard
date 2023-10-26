@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-12 p-3">
 	<div class="col-12 col-lg-12 p-0 main-box">
-	 
+
 		<div class="col-12 px-0">
 			<div class="col-12 p-0 row">
 				<div class="col-12 col-lg-4 py-3 px-3">
@@ -30,8 +30,8 @@
 		</div>
 		<div class="col-12 p-3" style="overflow:auto">
 			<div class="col-12 p-0" style="min-width:1100px;">
-				
-			
+
+
 			<table class="table table-bordered  table-hover">
 				<thead>
 					<tr>
@@ -70,9 +70,9 @@
 						<td>{{$article->date_added}}</td>
 
 						<td>{{$article->slug}}</td>
-						
+
 						<td>{{$article->title}}</td>
-	
+
 						<td><img src="{{$article->main_image()}}" style="width:40px"></td>
 
 						<td>
@@ -84,16 +84,16 @@
 						<td style="width: 360px;">
 
 
-							
+
 
 							@can('articles-read')
-							<a href="{{route('article.show',['article'=>$article])}}">
+							<a href="{{ route('website.article',$article) }}">
 								<span class="btn  btn-outline-primary btn-sm font-1 mx-1">
 									<span class="fas fa-search "></span> عرض
 								</span>
 							</a>
 							@endcan
-							
+
 							@can('comments-read')
 							<a href="{{route('admin.article-comments.index',['article_id'=>$article->id])}}">
 								<span class="btn  btn-outline-primary btn-sm font-1 mx-1">
@@ -119,6 +119,11 @@
 						</td>
 					</tr>
 					@endforeach
+                    @if ($articles->count() <= 0)
+                        <tr>
+                            <td colspan="13 " style="text-align: center;vertical-align: middle;"> لا توجد نتائج للبحث </td>
+                        </tr>
+                    @endif
 				</tbody>
 			</table>
 			</div>

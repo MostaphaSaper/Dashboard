@@ -59,16 +59,16 @@
                     <h4>خدماتنا</h4>
                     <div class="d-md-flex gap-4">
                         <ul>
-                            <li><a href="pages/financial_consulting.html">الاستشارات والحلول الإدارية والمالية</a>
+                            <li><a href="{{ route('website.services.finiancial-consulting') }}">الاستشارات والحلول الإدارية والمالية</a>
                             </li>
-                            <li><a href="pages/legal_advice.html">الاستشارات والحلول القانونية</a></li>
-                            <li><a href="pages/human_consulting.html">استشارات الموارد البشرية</a></li>
-                            <li><a href="pages/technical_consulting.html">الاستشارات والحلول التقنية</a></li>
+                            <li><a href="{{ route('website.services.legal-advice') }}">الاستشارات والحلول القانونية</a></li>
+                            <li><a href="{{ route('website.services.human-consulting') }}">استشارات الموارد البشرية</a></li>
+                            <li><a href="{{ route('website.services.technical-consulting') }}">الاستشارات والحلول التقنية</a></li>
                         </ul>
                         <ul>
-                            <li><a href="pages/marketing_consulting.html">الاستشارات والحلول التسويقية</a></li>
-                            <li><a href="pages/marketing_services.html">الخدمات التسويقية</a></li>
-                            <li><a href="pages/advertising_services.html">خدمات التصميم والحملات الإعلانية</a></li>
+                            <li><a href="{{ route('website.services.marketing-consulting') }}">الاستشارات والحلول التسويقية</a></li>
+                            <li><a href="{{ route('website.services.marketing-services') }}">الخدمات التسويقية</a></li>
+                            <li><a href="{{ route('website.services.advertising') }}">خدمات التصميم والحملات الإعلانية</a></li>
                         </ul>
                     </div>
                 </div>

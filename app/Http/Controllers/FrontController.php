@@ -78,6 +78,7 @@ class FrontController extends Controller
         ConsultingRequest::create([
             'user_id'=>auth()->check()?auth()->id():NULL,
             'name'=>$request->name,
+            'address'=>$request->address,
             'email'=>$request->email,
             'phone'=>$request->phone,
             'consulting_topic'=>$request->consulting_topic,

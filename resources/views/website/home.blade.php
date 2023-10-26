@@ -1,4 +1,5 @@
 @extends('layouts.website')
+@section('title', 'الصفحة الرئيسية')
 @section('content')
 
     <div class="slide-wrapper">
