@@ -1,5 +1,5 @@
 @extends('layouts.website')
-@section('title', 'الخدمات')
+@section('title', 'الاستشارات والحلول الإدارية و المالية')
 @section('content')
 
     <section id="header" class="financial-consulting-bg">
@@ -100,7 +100,7 @@
                     للاستشارات هنا لمساعدتك في
                     تحقيق أهدافك ونجاحك المستقبلي. اتصل بنا اليوم لمناقشة احتياجاتك وبدء رحلة التطوير والنمو معنا.
                 </p>
-                <a href="tel:+966112074129" class="call-us" data-aos="fade-up" data-aos-duration="1000">
+                <a href="{{ route('website.contact') }}" class="call-us" data-aos="fade-down" data-aos-duration="1000">
                     <span>اتصل بنا</span>
                 </a>
             </div>

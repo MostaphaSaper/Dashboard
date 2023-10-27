@@ -36,7 +36,7 @@
                             <img src="{{ $galleries->main_image() }}" class="img-fluid" alt="img">
                             <div>
                                 <h5>{{ $galleries->project_title }}</h5>
-                                <p>{{ $gallery->about_project }}</p>
+                                <p>{{ Str::limit($galleries->project_title, 35, '...') }}</p>
                             </div>
                             <a href="{{ route('website.gallery',$galleries) }}">اقرأ المزيد</a>
                         </div>

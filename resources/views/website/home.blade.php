@@ -1113,7 +1113,7 @@
                     </figure>
                 </div>
             </div>
-            <button>المزيد</button>
+            <a href="{{ route('website.galleries') }}"><button>المزيد</button></a>
         </div>
     </section>
 
@@ -1250,7 +1250,7 @@
                     <div class="bottom">
                         <h5>{{ $latest_article->title }}</h5>
                         <p> {{ $latest_article->meta_description }} </p>
-                        <a href="{{ route('website.articles') }}">اقرأ المزيد</a>
+                        <a href="{{ route('website.article',$latest_article) }}">اقرأ المزيد</a>
                     </div>
                 </div>
             </div>

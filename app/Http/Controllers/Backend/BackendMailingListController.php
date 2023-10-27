@@ -16,7 +16,7 @@ class BackendMailingListController extends Controller
             if($request->user_id!=null)
                 $q->where('user_id',$request->user_id);
             if($request->q!=null)
-                $q->where('name','LIKE','%'.$request->q.'%')->orWhere('email','LIKE','%'.$request->q.'%');
+                $q->where('email','LIKE','%'.$request->q.'%');
         })->orderBy('id','DESC')->paginate();
 
         return view('admin.mailing-list.index',compact('mailing_lists'));

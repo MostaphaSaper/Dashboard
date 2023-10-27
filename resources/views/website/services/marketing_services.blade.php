@@ -1,5 +1,5 @@
 @extends('layouts.website')
-@section('title', 'الخدمات')
+@section('title', 'الخدمات التسويقية')
 @section('content')
 
     <section id="header" class="marketing-services-bg">
@@ -1877,7 +1877,7 @@
                     </p>
                 </div>
             </div>
-            <a href="tel:+966112074129" class="call-us" data-aos="fade-down" data-aos-duration="1000">
+            <a href="{{ route('website.contact') }}" class="call-us" data-aos="fade-down" data-aos-duration="1000">
                 <span>اتصل بنا</span>
             </a>
         </div>

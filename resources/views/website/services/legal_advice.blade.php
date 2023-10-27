@@ -1,5 +1,5 @@
 @extends('layouts.website')
-@section('title', 'الخدمات')
+@section('title', 'الاستشارات والحلول القانونية')
 @section('content')
 
     <section id="header" class="legal-advice-bg">
@@ -104,7 +104,7 @@
                     اتصل بنا الآن واستفد من خبرتنا في مجال قانون الشركات <br class="d-none d-lg-block">
                     نحن هنا لمساعدتك في تحقيق أهدافك القانونية ونمو شركتك.
                 </p>
-                <a href="tel:+966112074129" class="call-us" data-aos="fade-up" data-aos-duration="1000">
+                <a href="{{ route('website.contact') }}" class="call-us" data-aos="fade-down" data-aos-duration="1000">
                     <span>اتصل بنا</span>
                 </a>
             </div>

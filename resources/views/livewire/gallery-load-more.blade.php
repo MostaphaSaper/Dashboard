@@ -7,7 +7,7 @@
                 </figure>
                 <div class="gallery-block-content">
                     @foreach ($gallery->tags as $tag)
-                        <span>{{ $tag->tag_name }}</span>
+                        <span>{{ $tag->tag_name }}،</span>
                     @endforeach
                     <h3>{{ $gallery->project_title }}</h3>
                     <p>{{ $gallery->about_project }}</p>

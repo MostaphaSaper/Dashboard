@@ -38,7 +38,7 @@
                             الصورة الرئيسية
                         </div>
                         <div class="col-12 pt-3">
-                            <input type="file" name="main_image" class="form-control" accept="image/*">
+                            <input type="file" required name="main_image" class="form-control" accept="image/*">
                         </div>
                     </div>
                     <div class="col-12  p-2">
@@ -46,7 +46,7 @@
                             محتوى المشروع
                         </div>
                         <div class="col-12 pt-3">
-                            <textarea name="project_content" class="editor with-file-explorer">{{old('project_content')}}</textarea>
+                            <textarea name="project_content" required class="editor with-file-explorer">{{old('project_content')}}</textarea>
                         </div>
                     </div>
                     <div class="col-12 p-2">
