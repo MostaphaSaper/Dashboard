@@ -9,6 +9,7 @@ use Livewire\Component;
 class ArticleSearch extends Component
 {
     public $amount = 6;
+    public $notFound = '';
     public $search ='';
     public $tagFilter ='';
     public $articles ;
@@ -21,7 +22,12 @@ class ArticleSearch extends Component
             ->orWhere('title','like','%'.$this->search.'%')
             ->take($this->amount)->get();
         }
-        return view('livewire.article-search',['tags'=>$tags,'articles'=>$this->articles,'amount'=>$this->amount]);
+        if($this->articles->count() < 1){
+            $this->notFound = '** لا توجد نتائج **';
+        }else{
+            $this->notFound = '';
+        }
+        return view('livewire.article-search',['tags'=>$tags,'articles'=>$this->articles,'amount'=>$this->amount,'notFound'=>$this->notFound]);
     }
 
     public function load()

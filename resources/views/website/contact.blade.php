@@ -82,12 +82,12 @@
                             <div data-aos="fade-up" data-aos-duration="1000">
                                 @if ($settings['phone'] )
                                     <a target="_blank"
-                                        href="https://api.whatsapp.com/send/?phone=+966112074129&text&type=phone_number&app_absent=0"
+                                        href="https://api.whatsapp.com/send/?phone={{ $settings['phone2'] }}&text&type=phone_number&app_absent=0"
                                         class="d-flex align-items-center">
                                         <img src="{{ asset('website/imgs/icons/phone-dark.svg') }}" alt="phone-icon" class="img-fluid">
                                         <div class="d-flex flex-column">
                                             <span class="main-title">الجوال</span>
-                                            <span class="child-title" dir="ltr">+966112074129</span>
+                                            <span class="child-title" dir="ltr">{{ $settings['phone2'] }}</span>
                                         </div>
                                     </a>
                                 @endif

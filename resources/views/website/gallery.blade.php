@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="row second-row gy-4">
-                <img data-aos="fade-down" data-aos-duration="1000" src="../imgs/info-gallery-img.webp"
+                <img data-aos="fade-down" data-aos-duration="1000" src="{{ $gallery->main_image() }}"
                     class="col-12 img-fluid info-gallery-img" alt="info-gallery-img">
                 <p data-aos="fade-down" data-aos-duration="1000" class="col-12">
                     {!!  $gallery->project_content !!}

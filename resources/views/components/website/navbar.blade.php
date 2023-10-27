@@ -68,7 +68,7 @@
             <a class="navbar-brand d-block d-lg-none" href="{{ route('home') }}">
                 <img src="{{ asset('website/imgs/logo.png') }}" alt="logo">
             </a>
-            <a class="nav-link d-none d-lg-block" href="#testimonial">
+            <a class="nav-link d-none d-lg-block" href="{{ route('home') }}#testimonial">
                 <button class="ask-request">اطلب استشارة</button>
             </a>
             <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarNav">

@@ -1235,18 +1235,7 @@
                     <div class="last-blog-block">
                         <h4>انـضـم لـنـشـرتـنـا الـبـريـديـة</h4>
                         <p>مقالات غنية بالمعلومات المفيدة</p>
-                        <form method="POST" action="{{ route('website.mailing-list') }}">
-                            @csrf
-                            <div class="d-flex flex-wrap">
-                                <input type="email" name="email" placeholder="البريد الالكتروني" class="form-control">
-                                @if ($errors->has('email'))
-                                    <div class="invalid-feedback mt-2">
-                                        الرجاء إدخال البريد الالكتروني
-                                    </div>
-                                @endif
-                                <button type="submit">سجل الآن</button>
-                            </div>
-                        </form>
+                        <livewire:mailing-list-box/>
                     </div>
                 </div>
                 <div class="col-lg-6 col-12" data-aos="fade-right" data-aos-duration="1000">

@@ -85,6 +85,7 @@ class FrontController extends Controller
             'Explanation'=>$request->Explanation,
             'work_field'=>$request->work_field
         ]);
+        toastr()->success('تم ارسال طلب الاستشارة بنجاح');
         return redirect('/');
     }
 
