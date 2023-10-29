@@ -54,11 +54,11 @@
 								{{$tag->tag_name}}
 							@endforeach
 						</td>
-						<td>{{Str::limit($project_gallery->project_title, 5, '...')}}</td>
+						<td>{{Str::limit($project_gallery->project_title, 20, '...')}}</td>
 						<td><img src="{{$project_gallery->main_image()}}" style="width:40px"></td>
-						<td>{{Str::limit($project_gallery->about_project, 5, '...')}}</td>
-						<td>{{Str::limit($project_gallery->finished_work, 5, '...')}}</td>
-						<td>{{Str::limit($project_gallery->our_role, 5, '...')}}</td>
+						<td>{{Str::limit($project_gallery->about_project, 20, '...')}}</td>
+						<td>{{Str::limit($project_gallery->finished_work, 20, '...')}}</td>
+						<td>{{Str::limit($project_gallery->our_role, 20, '...')}}</td>
 						<td style="width: 180px;">
 							<a href="{{route('admin.project-gallery.edit',$project_gallery)}}">
 								<span class="btn  btn-outline-success btn-sm font-1 mx-1">

@@ -1881,6 +1881,7 @@ footer ul li .speciel {
 
 #our-gallery .main-block .block img {
   height: 222px;
+  width: 100%;
   object-fit: cover;
 }
 

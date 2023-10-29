@@ -10,12 +10,12 @@
                         <span>{{ $tag->tag_name }}،</span>
                     @endforeach
                     <h3>{{ $gallery->project_title }}</h3>
-                    <p>{{ $gallery->about_project }}</p>
+                    <p>{{htmlspecialchars(trim(strip_tags(Str::limit($gallery->about_project, 50, '...'))))}}</p>
                 </div>
             </a>
         @endforeach
         @if ($galleries->count() >= $amount)
-            <div class="text-center"><button wire:click="load" class="read-more">اقرأ المزيد</button></div>
+            <div class="text-center"><button wire:click="load" class="read-more">المزيد</button></div>
         @endif
     </div>
 </div>

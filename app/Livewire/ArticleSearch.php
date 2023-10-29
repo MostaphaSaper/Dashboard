@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class ArticleSearch extends Component
 {
-    public $amount = 6;
+    public $amount = 10;
     public $notFound = '';
     public $search ='';
     public $tagFilter ='';
@@ -32,6 +32,6 @@ class ArticleSearch extends Component
 
     public function load()
     {
-        $this->amount+=6;
+        $this->amount+=10;
     }
 }

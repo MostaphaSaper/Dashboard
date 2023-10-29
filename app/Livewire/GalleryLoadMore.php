@@ -7,7 +7,7 @@ use App\Models\ProjectGallery;
 
 class GalleryLoadMore extends Component
 {
-    public $amount = 6;
+    public $amount = 3;
     public $tagFilter ='';
     public $galleries ;
     public function render()
@@ -18,6 +18,6 @@ class GalleryLoadMore extends Component
 
     public function load()
     {
-        $this->amount+=6;
+        $this->amount+=3;
     }
 }
